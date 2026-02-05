@@ -36,6 +36,21 @@
 		"primaryCta": "Démarrer un projet",
 		"secondaryCta": "Voir nos projets"
 	},
+	"process": {
+		"heading": "Notre Processus",
+		"subheading": "/ Comment nous construisons ensemble",
+		"description": "Un parcours collaboratif du concept au lancement, conçu pour donner vie à votre vision avec précision et créativité.",
+		"step1Title": "Découverte & Stratégie",
+		"step1Description": "Nous explorons en profondeur vos objectifs, votre audience et votre marché pour créer une base stratégique solide.",
+		"step2Title": "Design & Prototype",
+		"step2Description": "Notre équipe crée des concepts visuels époustouflants et des prototypes interactifs qui donnent vie à votre marque.",
+		"step3Title": "Développement & Tests",
+		"step3Description": "Nous construisons votre site avec des technologies de pointe, garantissant performance, accessibilité et fonctionnalité.",
+		"step4Title": "Lancement & Support",
+		"step4Description": "Votre site est mis en ligne avec notre soutien complet, plus une maintenance continue pour tout garder fluide.",
+		"primaryCta": "Démarrer un projet",
+		"secondaryCta": "Voir nos projets"
+	},
 	"contact": {
 		"heading": "Parlons",
 		"subtitle": "/ Entrer en contact",

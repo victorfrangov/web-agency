@@ -36,6 +36,21 @@
 		"primaryCta": "Start a Project",
 		"secondaryCta": "View Our Work"
 	},
+	"process": {
+		"heading": "Our Process",
+		"subheading": "/ How we build together",
+		"description": "A collaborative journey from concept to launch, designed to bring your vision to life with precision and creativity.",
+		"step1Title": "Discovery & Strategy",
+		"step1Description": "We dive deep into your goals, audience, and market to create a strategic foundation for your project.",
+		"step2Title": "Design & Prototype",
+		"step2Description": "Our team crafts stunning visual concepts and interactive prototypes that bring your brand to life.",
+		"step3Title": "Development & Testing",
+		"step3Description": "We build your website with cutting-edge technology, ensuring performance, accessibility, and seamless functionality.",
+		"step4Title": "Launch & Support",
+		"step4Description": "Your site goes live with our full support, plus ongoing maintenance to keep everything running smoothly.",
+		"primaryCta": "Start a Project",
+		"secondaryCta": "View Our Work"
+	},
 	"contact": {
 		"heading": "Let's talk",
 		"subtitle": "/ Get in touch",
