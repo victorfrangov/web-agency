@@ -1,0 +1,53 @@
+{
+	"meta": {
+		"title": "Agence de création web",
+		"description": "Des expériences web shader-first et un design numérique immersif."
+	},
+	"hero": {
+		"badge": "Agence de création web",
+		"titleLine1": "Créez des sites",
+		"titleLine2": "shader-first",
+		"description": "Transformer les espaces numériques avec des effets shader dynamiques et des expériences visuelles en temps réel qui captivent et inspirent.",
+		"primaryCta": "Ouvrir",
+		"secondaryCta": "Voir la démo",
+		"scrollHint": "Faites défiler pour explorer"
+	},
+	"nav": {
+		"home": "Accueil",
+		"work": "Projets",
+		"services": "Services",
+		"about": "À propos",
+		"contact": "Contact",
+		"getStarted": "Commencer",
+		"lang": "FR"
+	},
+	"work": {
+		"title": "À la une",
+		"subtitle": "/ Explorations récentes"
+	},
+	"services": {
+		"title": "Compétences",
+		"subtitle": "/ Ce que nous apportons"
+	},
+	"about": {
+		"heading": "Construire l'avenir du digital",
+		"p1": "Nous sommes un collectif de designers, développeurs et technologues créatifs obsédés par la création d'expériences numériques exceptionnelles.",
+		"p2": "Chaque projet est une opportunité d'explorer de nouvelles possibilités et de repousser les limites créatives.",
+		"primaryCta": "Démarrer un projet",
+		"secondaryCta": "Voir nos projets"
+	},
+	"contact": {
+		"heading": "Parlons",
+		"subtitle": "/ Entrer en contact",
+		"emailLabel": "Email",
+		"locationLabel": "Localisation",
+		"nameLabel": "Nom",
+		"messageLabel": "Message",
+		"namePlaceholder": "Votre nom",
+		"emailPlaceholder": "votre@email.com",
+		"messagePlaceholder": "Parlez-nous de votre projet...",
+		"send": "Envoyer le message",
+		"sending": "Envoi...",
+		"success": "Message envoyé avec succès!"
+	}
+}

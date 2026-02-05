@@ -1,8 +1,10 @@
 "use client"
 
 import { useReveal } from "@/hooks/use-reveal"
+import { useTranslations } from "next-intl"
 
 export function WorkSection() {
+  const t = useTranslations("work")
   const { ref, isVisible } = useReveal(0.3)
 
   return (
@@ -17,9 +19,9 @@ export function WorkSection() {
           }`}
         >
           <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
-            Featured
+            {t("title")}
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Recent explorations</p>
+          <p className="font-mono text-sm text-foreground/60 md:text-base">{t("subtitle")}</p>
         </div>
 
         <div className="space-y-6 md:space-y-8">

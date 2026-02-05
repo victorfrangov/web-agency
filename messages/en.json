@@ -1,0 +1,53 @@
+{
+	"meta": {
+		"title": "Web Creating Agency",
+		"description": "Shader-first web experiences and immersive digital design."
+	},
+	"hero": {
+		"badge": "Web Creating Agency",
+		"titleLine1": "Build stunning",
+		"titleLine2": "shader-first websites",
+		"description": "Transforming digital spaces with dynamic shader effects and real-time visual experiences that captivate and inspire.",
+		"primaryCta": "Open in",
+		"secondaryCta": "View Demo",
+		"scrollHint": "Scroll to explore"
+	},
+	"nav": {
+		"home": "Home",
+		"work": "Work",
+		"services": "Services",
+		"about": "About",
+		"contact": "Contact",
+		"getStarted": "Get Started",
+		"lang": "EN"
+	},
+	"work": {
+		"title": "Featured",
+		"subtitle": "/ Recent explorations"
+	},
+	"services": {
+		"title": "Capabilities",
+		"subtitle": "/ What we bring to the table"
+	},
+	"about": {
+		"heading": "Building the future of digital",
+		"p1": "We're a collective of designers, developers, and creative technologists obsessed with crafting exceptional digital experiences.",
+		"p2": "Every project is an opportunity to explore new possibilities and push creative boundaries.",
+		"primaryCta": "Start a Project",
+		"secondaryCta": "View Our Work"
+	},
+	"contact": {
+		"heading": "Let's talk",
+		"subtitle": "/ Get in touch",
+		"emailLabel": "Email",
+		"locationLabel": "Location",
+		"nameLabel": "Name",
+		"messageLabel": "Message",
+		"namePlaceholder": "Your name",
+		"emailPlaceholder": "your@email.com",
+		"messagePlaceholder": "Tell us about your project...",
+		"send": "Send Message",
+		"sending": "Sending...",
+		"success": "Message sent successfully!"
+	}
+}

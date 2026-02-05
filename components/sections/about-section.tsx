@@ -2,8 +2,10 @@
 
 import { MagneticButton } from "@/components/magnetic-button"
 import { useReveal } from "@/hooks/use-reveal"
+import { useTranslations } from "next-intl"
 
 export function AboutSection({ scrollToSection }: { scrollToSection?: (index: number) => void }) {
+  const t = useTranslations("about")
   const { ref, isVisible } = useReveal(0.3)
 
   return (
@@ -21,11 +23,7 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
               }`}
             >
               <h2 className="mb-3 font-sans text-3xl font-light leading-[1.1] tracking-tight text-foreground md:mb-4 md:text-6xl lg:text-7xl">
-                Building the
-                <br />
-                future of
-                <br />
-                <span className="text-foreground/40">digital</span>
+                {t("heading")}
               </h2>
             </div>
 
@@ -35,12 +33,8 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
               }`}
               style={{ transitionDelay: "200ms" }}
             >
-              <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">
-                We're a collective of designers, developers, and creative technologists obsessed with crafting exceptional digital experiences.
-              </p>
-              <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">
-                Every project is an opportunity to explore new possibilities and push creative boundaries.
-              </p>
+              <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">{t("p1")}</p>
+              <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">{t("p2")}</p>
             </div>
           </div>
 
@@ -86,10 +80,10 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           style={{ transitionDelay: "750ms" }}
         >
           <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(4)}>
-            Start a Project
+            {t("primaryCta")}
           </MagneticButton>
           <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection?.(1)}>
-            View Our Work
+            {t("secondaryCta")}
           </MagneticButton>
         </div>
       </div>
