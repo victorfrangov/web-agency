@@ -16,22 +16,33 @@ export function ContactSection() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       return
     }
 
     setIsSubmitting(true)
 
-    // Simulate form submission (replace with actual API call later)
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      const res = await fetch("/api", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
 
-    setIsSubmitting(false)
-    setSubmitSuccess(true)
-    setFormData({ name: "", email: "", message: "" })
+      if (!res.ok) {
+        // optionally read error: await res.json()
+        throw new Error("Failed to send")
+      }
 
-    // Reset success message after 5 seconds
-    setTimeout(() => setSubmitSuccess(false), 5000)
+      setSubmitSuccess(true)
+      setFormData({ name: "", email: "", message: "" })
+      setTimeout(() => setSubmitSuccess(false), 5000)
+    } catch (err) {
+      // keep simple: optionally show error UI
+      console.error(err)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -166,7 +177,7 @@ export function ContactSection() {
                   variant="primary"
                   size="lg"
                   className="w-full disabled:opacity-50"
-                  onClick={isSubmitting ? undefined : undefined}
+                  type="submit"
                 >
                   {isSubmitting ? t("sending") : t("send")}
                 </MagneticButton>
