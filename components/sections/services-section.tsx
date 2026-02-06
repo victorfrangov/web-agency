@@ -27,23 +27,23 @@ export function ServicesSection() {
         <div className="grid gap-8 md:grid-cols-2 md:gap-x-16 md:gap-y-12 lg:gap-x-24">
           {[
             {
-              title: "Creative Development",
-              description: "Pushing the boundaries of what's possible on the web",
+              title: t("cards.0.title"),
+              description: t("cards.0.description"),
               direction: "top",
             },
             {
-              title: "Visual Design",
-              description: "Crafting memorable experiences through thoughtful aesthetics",
+              title: t("cards.1.title"),
+              description: t("cards.1.description"),
               direction: "right",
             },
             {
-              title: "Motion & Animation",
-              description: "Bringing interfaces to life with purposeful movement",
+              title: t("cards.2.title"),
+              description: t("cards.2.description"),
               direction: "left",
             },
             {
-              title: "Technical Strategy",
-              description: "Building scalable solutions that perform beautifully",
+              title: t("cards.3.title"),
+              description: t("cards.3.description"),
               direction: "bottom",
             },
           ].map((service, i) => (

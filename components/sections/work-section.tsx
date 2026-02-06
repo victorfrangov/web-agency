@@ -2,10 +2,12 @@
 
 import { useReveal } from "@/hooks/use-reveal"
 import { useTranslations } from "next-intl"
+import { getFeaturedProjects } from "@/data/projects"
 
 export function WorkSection() {
   const t = useTranslations("work")
   const { ref, isVisible } = useReveal(0.3)
+  const featuredProjects = getFeaturedProjects()
 
   return (
     <section
@@ -25,30 +27,8 @@ export function WorkSection() {
         </div>
 
         <div className="space-y-6 md:space-y-8">
-          {[
-            {
-              number: "01",
-              title: "Kinetic Typography",
-              category: "Interactive Experience",
-              year: "2024",
-              direction: "left",
-            },
-            {
-              number: "02",
-              title: "Generative Patterns",
-              category: "Visual System",
-              year: "2024",
-              direction: "right",
-            },
-            {
-              number: "03",
-              title: "Spatial Interface",
-              category: "3D Navigation",
-              year: "2023",
-              direction: "left",
-            },
-          ].map((project, i) => (
-            <ProjectCard key={i} project={project} index={i} isVisible={isVisible} />
+          {featuredProjects.map((project, i) => (
+            <ProjectCard key={project.id} project={project} index={i} isVisible={isVisible} />
           ))}
         </div>
       </div>

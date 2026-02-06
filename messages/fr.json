@@ -1,16 +1,16 @@
 {
 	"meta": {
-		"title": "Agence de création web",
-		"description": "Des expériences web shader-first et un design numérique immersif."
+		"title": "Agence web — Visibilité & Clients",
+		"description": "Sites rapides, responsives et beaux conçus pour augmenter la visibilité et attirer des clients."
 	},
 	"hero": {
-		"badge": "Agence de création web",
-		"titleLine1": "Créez des sites",
-		"titleLine2": "shader-first",
-		"description": "Transformer les espaces numériques avec des effets shader dynamiques et des expériences visuelles en temps réel qui captivent et inspirent.",
-		"primaryCta": "Ouvrir",
-		"secondaryCta": "Voir la démo",
-		"scrollHint": "Faites défiler pour explorer"
+		"badge": "Agence web marketing",
+		"titleLine1": "accroche",
+		"titleLine2": "accroche2",
+		"description": "[A CHANGER] Nous créons des sites rapides, responsives et esthétiques pour donner à votre entreprise plus de visibilité, crédibilité et clients. Nous commençons par une démo pour que vous voyiez le concept, puis nous itérons ensemble.",
+		"primaryCta": "Demander une démo",
+		"secondaryCta": "Voir nos réalisations",
+		"scrollHint": "Faites défiler pour en savoir plus"
 	},
 	"nav": {
 		"home": "Accueil",
@@ -23,11 +23,29 @@
 	},
 	"work": {
 		"title": "À la une",
-		"subtitle": "/ Explorations récentes"
+		"subtitle": "/ Réalisations récentes"
 	},
 	"services": {
-		"title": "Compétences",
-		"subtitle": "/ Ce que nous apportons"
+		"title": "Services pour développer votre entreprise",
+		"subtitle": "Gagnez en visibilité et faites de vos visiteurs des clients",
+		"cards": [
+			{
+				"title": "[A Changer] Design axé conversion",
+				"description": "[A changer] Des designs clairs, des messages persuasifs et des appels à l'action efficaces pour transformer les visiteurs en clients."
+			},
+			{
+				"title": "SEO & Performance",
+				"description": "Optimisation technique et vitesse pour améliorer votre référencement et retenir vos visiteurs."
+			},
+			{
+				"title": "Empreinte numérique",
+				"description": "Identité visuelle cohérente pour renforcer la reconnaissance de votre marque et inspirer confiance."
+			},
+			{
+				"title": "[A Changer] Implémentation technique & Support",
+				"description": "Support technique pour garantir que votre site reste rapide, sécurisé et facile à mettre à jour à mesure que votre entreprise grandit."
+			}
+		]
 	},
 	"about": {
 		"heading": "Construire l'avenir du digital",
@@ -36,9 +54,24 @@
 		"primaryCta": "Démarrer un projet",
 		"secondaryCta": "Voir nos projets"
 	},
+	"process": {
+		"heading": "Notre processus",
+		"subheading": "/ [A changer] Collaboratif, transparent, orienté résultats",
+		"description": "[A changer] Un parcours collaboratif du concept au lancement, conçu pour donner vie à votre vision avec précision et créativité.",
+		"step1Title": "Découverte & Stratégie",
+		"step1Description": "Nous explorons en profondeur vos objectifs, votre audience et votre marché pour créer une base stratégique pour votre projet.",
+		"step2Title": "Design & Prototype",
+		"step2Description": "Nous réalisons une démo fonctionnelle pour que vous puissiez visualiser le résultat dès le départ.",
+		"step3Title": "Développement & Tests",
+		"step3Description": "Nous construisons votre site avec des technologies de pointe, en assurant performance, accessibilité et fonctionnalité fluide.",
+		"step4Title": "Lancement & Croissance",
+		"step4Description": "Mise en ligne avec soutien complet; suivi et options d'évolution pour continuer à attirer des clients.",
+		"primaryCta": "Démarrer un projet",
+		"secondaryCta": "Voir nos réalisations"
+	},
 	"contact": {
-		"heading": "Parlons",
-		"subtitle": "/ Entrer en contact",
+		"heading": "Parlons de votre projet",
+		"subtitle": "/ Entrez en contact",
 		"emailLabel": "Email",
 		"locationLabel": "Localisation",
 		"nameLabel": "Nom",
@@ -46,8 +79,8 @@
 		"namePlaceholder": "Votre nom",
 		"emailPlaceholder": "votre@email.com",
 		"messagePlaceholder": "Parlez-nous de votre projet...",
-		"send": "Envoyer le message",
+		"send": "Envoyer la demande",
 		"sending": "Envoi...",
-		"success": "Message envoyé avec succès!"
+		"success": "Merci — nous vous répondrons sous peu."
 	}
 }

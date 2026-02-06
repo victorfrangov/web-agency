@@ -6,7 +6,8 @@ import { GrainOverlay } from "@/components/grain-overlay"
 import { HeroSection } from "@/components/sections/hero-section"
 import { WorkSection } from "@/components/sections/work-section"
 import { ServicesSection } from "@/components/sections/services-section"
-import { AboutSection } from "@/components/sections/about-section"
+// import { AboutSection } from "@/components/sections/about-section"
+import { ProcessSection } from "@/components/sections/process"
 import { ContactSection } from "@/components/sections/contact-section"
 import { Nav } from "@/components/sections/nav"
 
@@ -233,7 +234,8 @@ export default function HomeClient() {
 
         <WorkSection />
         <ServicesSection />
-        <AboutSection scrollToSection={scrollToSection} />
+        <ProcessSection />
+        {/* <AboutSection scrollToSection={scrollToSection} /> */}
         <ContactSection />
       </div>
 

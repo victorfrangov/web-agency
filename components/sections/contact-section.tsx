@@ -55,7 +55,7 @@ export function ContactSection() {
 
             <div className="space-y-4 md:space-y-8">
               <a
-                href="mailto:hello@studio.com"
+                href="mailto:v@victorfrangov.com"
                 className={`group block transition-all duration-700 ${
                   isVisible ? "translate-x-0 opacity-100" : "-translate-x-16 opacity-0"
                 }`}
@@ -66,7 +66,7 @@ export function ContactSection() {
                   <span className="font-mono text-xs text-foreground/60">{t("emailLabel")}</span>
                 </div>
                 <p className="text-base text-foreground transition-colors group-hover:text-foreground/70 md:text-2xl">
-                  hello@studio.com
+                  v@victorfrangov.com
                 </p>
               </a>
 
@@ -80,10 +80,10 @@ export function ContactSection() {
                   <MapPin className="h-3 w-3 text-foreground/60" />
                   <span className="font-mono text-xs text-foreground/60">{t("locationLabel")}</span>
                 </div>
-                <p className="text-base text-foreground md:text-2xl">New York, NY</p>
+                <p className="text-base text-foreground md:text-2xl">Montreal, Canada</p>
               </div>
 
-              <div
+              {/* <div
                 className={`flex gap-2 pt-2 transition-all duration-700 md:pt-4 ${
                   isVisible ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"
                 }`}
@@ -98,7 +98,7 @@ export function ContactSection() {
                     {social}
                   </a>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
 

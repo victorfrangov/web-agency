@@ -1,16 +1,16 @@
 {
 	"meta": {
-		"title": "Web Creating Agency",
-		"description": "Shader-first web experiences and immersive digital design."
+		"title": "Web Agency — Visibility & Clients",
+		"description": "Fast, responsive and beautiful websites designed to increase visibility and attract customers."
 	},
 	"hero": {
-		"badge": "Web Creating Agency",
-		"titleLine1": "Build stunning",
-		"titleLine2": "shader-first websites",
-		"description": "Transforming digital spaces with dynamic shader effects and real-time visual experiences that captivate and inspire.",
-		"primaryCta": "Open in",
-		"secondaryCta": "View Demo",
-		"scrollHint": "Scroll to explore"
+		"badge": "Marketing Web Agency",
+		"titleLine1": "Increase your visibility",
+		"titleLine2": "Attract more customers",
+		"description": "We build fast, responsive and beautiful websites that give your business greater visibility, credibility and customers. We start with a demo so you can see the concept, then iterate together to match your needs.",
+		"primaryCta": "Request a demo",
+		"secondaryCta": "View our work",
+		"scrollHint": "Scroll to learn more"
 	},
 	"nav": {
 		"home": "Home",
@@ -23,21 +23,54 @@
 	},
 	"work": {
 		"title": "Featured",
-		"subtitle": "/ Recent explorations"
+		"subtitle": "/ Our recent work"
 	},
 	"services": {
-		"title": "Capabilities",
-		"subtitle": "/ What we bring to the table"
+		"title": "Services to grow your business",
+		"subtitle": "Gain visibility and turn visitors into customers",
+		"cards": [
+			{
+				"title": "Conversion-driven Design",
+				"description": "Clear interfaces, persuasive messaging and strong calls-to-action that turn visitors into customers."
+			},
+			{
+				"title": "SEO & Performance",
+				"description": "Technical optimization and speed improvements to boost your search visibility and keep users engaged."
+			},
+			{
+				"title": "Branding & Digital Presence",
+				"description": "A cohesive visual identity that reinforces recognition and builds trust with potential customers."
+			},
+			{
+				"title": "Technical Implementation & Support",
+				"description": "Reliable, scalable sites that stay fast, secure and easy to update as your business grows."
+			}
+		]
 	},
 	"about": {
-		"heading": "Building the future of digital",
-		"p1": "We're a collective of designers, developers, and creative technologists obsessed with crafting exceptional digital experiences.",
-		"p2": "Every project is an opportunity to explore new possibilities and push creative boundaries.",
-		"primaryCta": "Start a Project",
-		"secondaryCta": "View Our Work"
+		"heading": "Helping small businesses grow",
+		"p1": "We meet with each client to understand goals, audience and priorities. You’ll see the progress of your site at every stage — from the initial demo to the final product.",
+		"p2": "Our purpose is to increase your visibility and credibility online with fast, beautiful and easy-to-evolve websites.",
+		"primaryCta": "Schedule a call",
+		"secondaryCta": "View a demo"
+	},
+	"process": {
+		"heading": "Our process",
+		"subheading": "/ Collaborative, transparent, results-driven",
+		"description": "A simple, transparent journey: we meet, deliver a demo, you validate, then we build quickly and iterate together to maximize impact.",
+		"step1Title": "Meet & Brief",
+		"step1Description": "We sit down with you to define objectives, audience and business priorities.",
+		"step2Title": "Design & Demo",
+		"step2Description": "We deliver a functional demo early so you can visualize the outcome from the start.",
+		"step3Title": "Development & Testing",
+		"step3Description": "Fast, accessible development with performance and quality testing to ensure a smooth user experience.",
+		"step4Title": "Launch & Growth",
+		"step4Description": "We launch your site with full support and offer continued options to evolve and attract more customers.",
+		"primaryCta": "Start a project",
+		"secondaryCta": "View our work"
 	},
 	"contact": {
-		"heading": "Let's talk",
+		"heading": "Let's talk about your project",
 		"subtitle": "/ Get in touch",
 		"emailLabel": "Email",
 		"locationLabel": "Location",
@@ -45,9 +78,9 @@
 		"messageLabel": "Message",
 		"namePlaceholder": "Your name",
 		"emailPlaceholder": "your@email.com",
-		"messagePlaceholder": "Tell us about your project...",
-		"send": "Send Message",
+		"messagePlaceholder": "Tell us about your goals and needs...",
+		"send": "Send request",
 		"sending": "Sending...",
-		"success": "Message sent successfully!"
+		"success": "Thanks — we'll get back to you shortly."
 	}
 }
