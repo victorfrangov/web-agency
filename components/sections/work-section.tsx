@@ -1,13 +1,24 @@
 "use client"
 
+import Link from "next/link"
 import { useReveal } from "@/hooks/use-reveal"
 import { useTranslations } from "next-intl"
-import { getFeaturedProjects } from "@/data/projects"
+
+type Project = {
+  number: string
+  year: string
+}
+
+const projects: Project[] = [
+  { number: "01", year: "2026" },
+  { number: "02", year: "2026" },
+  { number: "03", year: "2025" },
+  { number: "04", year: "2025" },
+]
 
 export function WorkSection() {
   const t = useTranslations("work")
   const { ref, isVisible } = useReveal(0.3)
-  const featuredProjects = getFeaturedProjects()
 
   return (
     <section
@@ -27,8 +38,8 @@ export function WorkSection() {
         </div>
 
         <div className="space-y-6 md:space-y-8">
-          {featuredProjects.map((project, i) => (
-            <ProjectCard key={project.id} project={project} index={i} isVisible={isVisible} />
+          {projects.map((project, i) => (
+            <ProjectCard key={`${project.number}-${i}`} project={project} index={i} isVisible={isVisible} />
           ))}
         </div>
       </div>
@@ -41,16 +52,23 @@ function ProjectCard({
   index,
   isVisible,
 }: {
-  project: { number: string; title: string; category: string; year: string; direction: string }
+  project: { number: string; year: string }
   index: number
   isVisible: boolean
 }) {
+  const t = useTranslations("work")
+
+  const direction = index % 2 === 0 ? "left" : "right"
+
   const getRevealClass = () => {
     if (!isVisible) {
-      return project.direction === "left" ? "-translate-x-16 opacity-0" : "translate-x-16 opacity-0"
+      return direction === "left" ? "-translate-x-16 opacity-0" : "translate-x-16 opacity-0"
     }
     return "translate-x-0 opacity-100"
   }
+
+  const link = t(`projects.${index}.link`)
+  const hasLink = Boolean(link)
 
   return (
     <div
@@ -66,10 +84,26 @@ function ProjectCard({
           {project.number}
         </span>
         <div>
-          <h3 className="mb-1 font-sans text-2xl font-light text-foreground transition-transform duration-300 group-hover:translate-x-2 md:text-3xl lg:text-4xl">
-            {project.title}
-          </h3>
-          <p className="font-mono text-xs text-foreground/50 md:text-sm">{project.category}</p>
+          {hasLink ? (
+            <div className="inline-flex items-center gap-2 group/link">
+              <Link
+                href={link}
+                className="underline decoration-foreground/30 underline-offset-4 hover:decoration-foreground"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <h3 className="mb-1 font-sans text-2xl font-light text-foreground transition-transform duration-300 group-hover/link:translate-x-2 md:text-3xl lg:text-4xl">
+                  {t(`projects.${index}.title`)}
+                </h3>
+              </Link>
+              <span className="text-foreground/50 transition-transform duration-300 group-hover/link:translate-x-2">↗</span>
+            </div>
+          ) : (
+            <h3 className="mb-1 font-sans text-2xl font-light text-foreground md:text-3xl lg:text-4xl">
+              {t(`projects.${index}.title`)}
+            </h3>
+          )}
+          <p className="font-mono text-xs text-foreground/50 md:text-sm">{t(`projects.${index}.category`)}</p>
         </div>
       </div>
       <span className="font-mono text-xs text-foreground/30 md:text-sm">{project.year}</span>

@@ -23,7 +23,29 @@
 	},
 	"work": {
 		"title": "À la une",
-		"subtitle": "/ Réalisations récentes"
+		"subtitle": "/ Réalisations récentes",
+		"projects": [
+      {
+        "title": "Votre prochain project!",
+        "category": "Contactez-nous pour le réaliser",
+        "link": ""
+      },
+      {
+        "title": "Panda Boba-Tea",
+        "category": "Chaines de bubble tea",
+        "link": "https://panda-boba-t-boucherville.vercel.app/"
+      },
+      {
+        "title": "Victor Frangov",
+        "category": "Portfolio en ligne",
+        "link": "https://victorfrangov.com"
+      },
+      {
+        "title": "SuperVitre",
+        "category": "Lavage de vitres",
+        "link": "https://supervitre.net"
+      }
+		]
 	},
 	"services": {
 		"title": "Services pour développer votre entreprise",

@@ -14,63 +14,85 @@
 	},
 	"nav": {
 		"home": "Home",
-		"work": "Work",
+		"work": "Projects",
 		"services": "Services",
 		"about": "About",
 		"contact": "Contact",
-		"getStarted": "Get Started",
+		"getStarted": "Get started",
 		"lang": "EN"
 	},
 	"work": {
 		"title": "Featured",
-		"subtitle": "/ Our recent work"
+		"subtitle": "/ Recent work",
+		"projects": [
+			{
+				"title": "Your next project!",
+				"category": "Contact us to bring it to life",
+				"link": ""
+			},
+			{
+				"title": "Panda Boba-Tea",
+				"category": "Bubble tea chains",
+				"link": "https://panda-boba-t-boucherville.vercel.app/"
+			},
+			{
+				"title": "Victor Frangov",
+				"category": "Online portfolio",
+				"link": "https://victorfrangov.com"
+			},
+			{
+				"title": "SuperVitre",
+				"category": "Window cleaning",
+				"link": "https://supervitre.net"
+			}
+		]
 	},
 	"services": {
 		"title": "Services to grow your business",
 		"subtitle": "Gain visibility and turn visitors into customers",
 		"cards": [
 			{
-				"title": "Conversion-driven Design",
-				"description": "Clear interfaces, persuasive messaging and strong calls-to-action that turn visitors into customers."
+				"title": "Conversion-focused design",
+				"description": "Clear designs, persuasive messaging and effective calls-to-action to turn visitors into customers."
 			},
 			{
 				"title": "SEO & Performance",
-				"description": "Technical optimization and speed improvements to boost your search visibility and keep users engaged."
+				"description": "Technical optimization and speed to improve your rankings and keep visitors engaged."
 			},
 			{
-				"title": "Branding & Digital Presence",
-				"description": "A cohesive visual identity that reinforces recognition and builds trust with potential customers."
+				"title": "Digital presence",
+				"description": "A cohesive visual identity to strengthen brand recognition and build trust."
 			},
 			{
-				"title": "Technical Implementation & Support",
-				"description": "Reliable, scalable sites that stay fast, secure and easy to update as your business grows."
+				"title": "Technical implementation & Support",
+				"description": "Technical support to keep your site fast, secure and easy to update as your business grows."
 			}
 		]
 	},
 	"about": {
-		"heading": "Helping small businesses grow",
-		"p1": "We meet with each client to understand goals, audience and priorities. You’ll see the progress of your site at every stage — from the initial demo to the final product.",
-		"p2": "Our purpose is to increase your visibility and credibility online with fast, beautiful and easy-to-evolve websites.",
-		"primaryCta": "Schedule a call",
-		"secondaryCta": "View a demo"
+		"heading": "Building the future of digital",
+		"p1": "We are a collective of designers, developers and creative technologists obsessed with crafting exceptional digital experiences.",
+		"p2": "Each project is an opportunity to explore new possibilities and push creative boundaries.",
+		"primaryCta": "Start a project",
+		"secondaryCta": "View our projects"
 	},
 	"process": {
 		"heading": "Our process",
 		"subheading": "/ Collaborative, transparent, results-driven",
-		"description": "A simple, transparent journey: we meet, deliver a demo, you validate, then we build quickly and iterate together to maximize impact.",
-		"step1Title": "Meet & Brief",
-		"step1Description": "We sit down with you to define objectives, audience and business priorities.",
-		"step2Title": "Design & Demo",
-		"step2Description": "We deliver a functional demo early so you can visualize the outcome from the start.",
+		"description": "A collaborative journey from concept to launch, designed to bring your vision to life with precision and creativity.",
+		"step1Title": "Discovery & Strategy",
+		"step1Description": "We dive into your goals, audience and market to build a strong strategic foundation.",
+		"step2Title": "Design & Prototype",
+		"step2Description": "We deliver a functional demo so you can visualize the result from the start.",
 		"step3Title": "Development & Testing",
-		"step3Description": "Fast, accessible development with performance and quality testing to ensure a smooth user experience.",
+		"step3Description": "We build your site with modern technologies, ensuring performance, accessibility and a smooth experience.",
 		"step4Title": "Launch & Growth",
-		"step4Description": "We launch your site with full support and offer continued options to evolve and attract more customers.",
+		"step4Description": "Launch with full support, plus options to evolve and continue attracting customers.",
 		"primaryCta": "Start a project",
 		"secondaryCta": "View our work"
 	},
 	"contact": {
-		"heading": "Let's talk about your project",
+		"heading": "Let’s talk about your project",
 		"subtitle": "/ Get in touch",
 		"emailLabel": "Email",
 		"locationLabel": "Location",
@@ -78,9 +100,9 @@
 		"messageLabel": "Message",
 		"namePlaceholder": "Your name",
 		"emailPlaceholder": "your@email.com",
-		"messagePlaceholder": "Tell us about your goals and needs...",
+		"messagePlaceholder": "Tell us about your project...",
 		"send": "Send request",
 		"sending": "Sending...",
-		"success": "Thanks — we'll get back to you shortly."
+		"success": "Thanks — we’ll get back to you shortly."
 	}
 }
