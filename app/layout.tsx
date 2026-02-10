@@ -3,7 +3,7 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#1B263B"
+  themeColor: "#0D1B2A"
 }
 
 import type React from "react"
@@ -25,8 +25,8 @@ const geistMono = Geist_Mono({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
+    <html lang="en" className="bg-[#0D1B2A]">
+      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-[#0D1B2A]`}>
         {children}
         <Analytics />
       </body>

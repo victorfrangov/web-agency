@@ -30,25 +30,6 @@ export default function HomeClient() {
     setIsTouchDevice(Boolean(isTouch))
   }, [])
  
-  // ensure correct viewport height on mobile (iOS Safari) using --vh
-  useEffect(() => {
-    const setVh = () => {
-      const vh = window.visualViewport?.height ?? window.innerHeight
-      document.documentElement.style.setProperty("--vh", `${vh * 0.01}px`)
-    }
-
-    setVh()
-    window.addEventListener("resize", setVh)
-    window.addEventListener("orientationchange", setVh)
-    window.visualViewport?.addEventListener("resize", setVh)
-
-    return () => {
-      window.removeEventListener("resize", setVh)
-      window.removeEventListener("orientationchange", setVh)
-      window.visualViewport?.removeEventListener("resize", setVh)
-    }
-  }, [])
-
   useEffect(() => {
     const checkShaderReady = () => {
       if (shaderContainerRef.current) {
@@ -132,7 +113,7 @@ export default function HomeClient() {
   }, [currentSection])
 
   return (
-    <main className="relative w-full overflow-hidden bg-background">
+    <main className="relative h-[100dvh] w-full overflow-hidden bg-background">
       {!isTouchDevice && <CustomCursor />}
 
       <div
@@ -175,8 +156,8 @@ export default function HomeClient() {
       <div
         ref={scrollContainerRef}
         data-scroll-container
-        className={`relative z-10 flex flex-col overflow-y-auto overflow-x-hidden transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
-        style={{ paddingBottom: "env(safe-area-inset-bottom)", WebkitOverflowScrolling: "touch" }}
+        className={`relative z-10 flex h-[100dvh] flex-col overflow-y-auto overflow-x-hidden transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
+        style={{ WebkitOverflowScrolling: "touch" }}
       >
         <HeroSection onPrimaryClick={() => scrollToSection(4)} onSecondaryClick={() => scrollToSection(1)} />
         <WorkSection />
