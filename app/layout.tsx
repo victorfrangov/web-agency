@@ -1,4 +1,9 @@
 export const dynamic = "force-static"
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+}
 
 import type React from "react"
 import { Geist, Geist_Mono } from "next/font/google"
