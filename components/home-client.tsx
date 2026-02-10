@@ -135,7 +135,8 @@ export default function HomeClient() {
   return (
     <main
       className="relative h-screen w-full overflow-hidden bg-background"
-      style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+      // keep the var(--vh) behavior for layout but ensure the background/shader covers the full device viewport
+      style={{ height: "calc(var(--vh, 1vh) * 100)", minHeight: "100dvh" }}
     >
       {!isTouchDevice && <CustomCursor />}
       <GrainOverlay />
@@ -143,7 +144,8 @@ export default function HomeClient() {
       <div
         ref={shaderContainerRef}
         className={`fixed inset-0 z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
-        style={{ contain: "strict" }}
+        // ensure shader covers the full device viewport (including under safari UI)
+        style={{ minHeight: "100dvh" }}
       >
         <Shader className="h-full w-full">
           <Swirl
@@ -183,7 +185,13 @@ export default function HomeClient() {
         ref={scrollContainerRef}
         data-scroll-container
         className={`relative z-10 flex flex-col h-screen overflow-y-auto overflow-x-hidden transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none", height: "calc(var(--vh, 1vh) * 100)" }}
+        // add safe-area inset padding so content isn't obscured by the bottom search/home bar and let content flow under it
+        style={{
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          height: "calc(var(--vh, 1vh) * 100)",
+          paddingBottom: "env(safe-area-inset-bottom)",
+        }}
       >
         <HeroSection onPrimaryClick={() => scrollToSection(4)} onSecondaryClick={() => scrollToSection(1)} />
         <WorkSection />
