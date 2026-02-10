@@ -60,59 +60,59 @@ export default function HomeClient() {
     }
   }, [])
 
-  // SCROLL TO SECTION — supports body scroll on touch, inner container on desktop
+  // SCROLL TO SECTION — vertical
   const scrollToSection = (index: number) => {
-    const sections = Array.from(document.querySelectorAll("[data-section]")) as HTMLElement[]
-    const target = sections[index]
-    const top = target ? (target.getBoundingClientRect().top + window.scrollY) : window.innerHeight * index
-
-    if (isTouchDevice) {
-      window.scrollTo({ top, behavior: "smooth" })
-    } else if (scrollContainerRef.current) {
-      // desktop: scroll the inner container to preserve desktop scrollbar behavior
-      const child = scrollContainerRef.current.children[index] as HTMLElement | undefined
-      const topLocal = child ? child.offsetTop : scrollContainerRef.current.offsetHeight * index
-      scrollContainerRef.current.scrollTo({ top: topLocal, behavior: "smooth" })
+    if (scrollContainerRef.current) {
+      const target = scrollContainerRef.current.children[index] as HTMLElement | undefined
+      const top = target ? target.offsetTop : scrollContainerRef.current.offsetHeight * index
+      scrollContainerRef.current.scrollTo({
+        top,
+        behavior: "smooth",
+      })
+      setCurrentSection(index)
     }
-    setCurrentSection(index)
   }
 
-  // SCROLL — detect vertical section (body scroll on touch, inner on desktop)
+  // SCROLL — detect vertical section
   useEffect(() => {
     const handleScroll = () => {
       if (scrollThrottleRef.current) return
 
       scrollThrottleRef.current = requestAnimationFrame(() => {
-        if (isTouchDevice) {
-          const sectionHeight = window.innerHeight
-          const scrollTop = window.scrollY
-          const newSection = Math.round(scrollTop / sectionHeight)
-          if (newSection !== currentSection) setCurrentSection(newSection)
-        } else {
-          if (!scrollContainerRef.current) {
-            scrollThrottleRef.current = undefined
-            return
-          }
-          const sectionHeight = scrollContainerRef.current.offsetHeight
-          const scrollTop = scrollContainerRef.current.scrollTop
-          const newSection = Math.round(scrollTop / sectionHeight)
-          if (newSection !== currentSection) setCurrentSection(newSection)
+        if (!scrollContainerRef.current) {
+          scrollThrottleRef.current = undefined
+          return
         }
+
+        const sectionHeight = scrollContainerRef.current.offsetHeight
+        const scrollTop = scrollContainerRef.current.scrollTop
+        const newSection = Math.round(scrollTop / sectionHeight)
+
+        if (newSection !== currentSection && newSection >= 0 && newSection <= 4) {
+          setCurrentSection(newSection)
+        }
+
         scrollThrottleRef.current = undefined
       })
     }
 
-    const container = isTouchDevice ? window : scrollContainerRef.current
-    container?.addEventListener("scroll", handleScroll, { passive: true })
+    const container = scrollContainerRef.current
+    if (container) {
+      container.addEventListener("scroll", handleScroll, { passive: true })
+    }
 
     return () => {
-      container?.removeEventListener("scroll", handleScroll)
-      if (scrollThrottleRef.current) cancelAnimationFrame(scrollThrottleRef.current)
+      if (container) {
+        container.removeEventListener("scroll", handleScroll)
+      }
+      if (scrollThrottleRef.current) {
+        cancelAnimationFrame(scrollThrottleRef.current)
+      }
     }
-  }, [currentSection, isTouchDevice])
+  }, [currentSection])
 
   return (
-    <main className="relative w-full bg-[#0D1B2A]">
+    <main className="relative h-[100dvh] w-full overflow-hidden bg-[#0D1B2A]">
       {!isTouchDevice && <CustomCursor />}
 
       <div
@@ -155,16 +155,14 @@ export default function HomeClient() {
       <div
         ref={scrollContainerRef}
         data-scroll-container
-        className={`relative z-10 flex flex-col transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
-        // keep overflow for desktop; on touch devices body will scroll, so we don't force overflow here
-        style={{ overflowY: isTouchDevice ? "visible" : "auto" }}
+        className={`relative z-10 flex h-full flex-col overflow-y-auto overflow-x-hidden transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
       >
-        <div data-section><HeroSection onPrimaryClick={() => scrollToSection(4)} onSecondaryClick={() => scrollToSection(1)} /></div>
-        <div data-section><WorkSection /></div>
-        <div data-section><ServicesSection /></div>
-        <div data-section><ProcessSection /></div>
-        {/* <div data-section><AboutSection scrollToSection={scrollToSection} /></div> */}
-        <div data-section><ContactSection /></div>
+        <HeroSection onPrimaryClick={() => scrollToSection(4)} onSecondaryClick={() => scrollToSection(1)} />
+        <WorkSection />
+        <ServicesSection />
+        <ProcessSection />
+        {/* <AboutSection scrollToSection={scrollToSection} /> */}
+        <ContactSection />
       </div>
     </main>
   )
