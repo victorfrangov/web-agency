@@ -132,12 +132,12 @@ export default function HomeClient() {
   }, [currentSection])
 
   return (
-    <main className="relative w-full overflow-hidden bg-background main-viewport">
+    <main className="relative w-full overflow-hidden bg-background">
       {!isTouchDevice && <CustomCursor />}
 
       <div
         ref={shaderContainerRef}
-        className={`fixed inset-0 z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} shader-full`}
+        className={`fixed inset-0 z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
         style={{ contain: "strict" }}
       >
         <Shader className="h-full w-full">
@@ -175,7 +175,7 @@ export default function HomeClient() {
       <div
         ref={scrollContainerRef}
         data-scroll-container
-        className={`relative z-10 flex flex-col overflow-y-auto overflow-x-hidden transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} main-viewport`}
+        className={`relative z-10 flex flex-col overflow-y-auto overflow-x-hidden transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
         style={{ paddingBottom: "env(safe-area-inset-bottom)", WebkitOverflowScrolling: "touch" }}
       >
         <HeroSection onPrimaryClick={() => scrollToSection(4)} onSecondaryClick={() => scrollToSection(1)} />

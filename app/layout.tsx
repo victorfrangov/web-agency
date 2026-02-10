@@ -3,6 +3,7 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
+  themeColor: "#1B263B"
 }
 
 import type React from "react"

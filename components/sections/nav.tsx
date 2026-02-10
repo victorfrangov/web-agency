@@ -22,7 +22,7 @@ export function Nav({ currentSection, onNavigate, isLoaded }: NavProps) {
 
   return (
     <nav
-      className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-6 transition-all duration-700 md:px-12 ${
+      className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 pb-6 pt-[calc(1.5rem+env(safe-area-inset-top))] transition-all duration-700 md:px-12 ${
         isLoaded ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-3 pointer-events-none"
       }`}
     >
