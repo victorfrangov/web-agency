@@ -121,7 +121,7 @@
 }
 
 /* ensure shader covers full viewport */
-.shader-full {
+ shader-full {
   min-height: 100dvh;
 }
 
@@ -143,5 +143,22 @@ body {
   section {
     transform: none;
     contain: none;
+  }
+
+  html, body {
+    height: auto;
+    min-height: 100dvh;
+    overflow: auto;
+  }
+
+  .main-viewport {
+    height: auto;
+    min-height: 100dvh;
+  }
+
+  [data-scroll-container] {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
   }
 }
