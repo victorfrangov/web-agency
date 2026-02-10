@@ -230,8 +230,7 @@ export default function HomeClient() {
         }`}
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        <HeroSection onPrimaryClick={() => window.open("https://victorfrangov.com", "_blank")} onSecondaryClick={() => scrollToSection(1)} />
-
+        <HeroSection onPrimaryClick={() => scrollToSection(4)} onSecondaryClick={() => scrollToSection(1)} />
         <WorkSection />
         <ServicesSection />
         <ProcessSection />

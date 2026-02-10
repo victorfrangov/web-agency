@@ -56,7 +56,7 @@ export function Nav({ currentSection, onNavigate }: NavProps) {
           onClick={() => onNavigate(4)}
           className="hidden rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background md:inline-flex"
         >
-          {t("getStarted")}
+          {t("getStarted") || (locale === "fr" ? "Commencer" : "Get started")}
         </button>
         <button
           onClick={toggleLang}
