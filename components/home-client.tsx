@@ -176,12 +176,7 @@ export default function HomeClient() {
         ref={scrollContainerRef}
         data-scroll-container
         className={`relative z-10 flex flex-col overflow-y-auto overflow-x-hidden transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} main-viewport`}
-        style={{
-          scrollbarWidth: "none",
-          msOverflowStyle: "none",
-          paddingBottom: "calc(env(safe-area-inset-bottom) + 24px)",
-          WebkitOverflowScrolling: "touch",
-        }}
+        style={{ paddingBottom: "env(safe-area-inset-bottom)", WebkitOverflowScrolling: "touch" }}
       >
         <HeroSection onPrimaryClick={() => scrollToSection(4)} onSecondaryClick={() => scrollToSection(1)} />
         <WorkSection />

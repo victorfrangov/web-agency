@@ -124,3 +124,9 @@
 .shader-full {
   min-height: 100dvh;
 }
+
+html,
+body {
+  min-height: 100%;
+  background: var(--background);
+}
