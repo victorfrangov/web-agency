@@ -113,13 +113,21 @@ export default function HomeClient() {
   }, [currentSection])
 
   return (
-    <main className="relative h-[100dvh] w-full overflow-hidden bg-background">
+    <main className="relative min-h-[100dvh] w-full overflow-hidden bg-[#0D1B2A]"
+      style={{ minHeight: 'calc(100dvh + env(safe-area-inset-bottom))' }}
+    >
       {!isTouchDevice && <CustomCursor />}
 
       <div
         ref={shaderContainerRef}
-        className={`fixed inset-0 z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
-        style={{ contain: "strict" }}
+        className={`fixed z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
+        style={{
+          contain: "strict",
+          top: "calc(-1 * env(safe-area-inset-top, 0px))",
+          left: 0,
+          right: 0,
+          bottom: "calc(-1 * env(safe-area-inset-bottom, 0px))",
+        }}
       >
         <Shader className="h-full w-full">
           <Swirl
@@ -156,8 +164,11 @@ export default function HomeClient() {
       <div
         ref={scrollContainerRef}
         data-scroll-container
-        className={`relative z-10 flex h-[100dvh] flex-col overflow-y-auto overflow-x-hidden transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
-        style={{ WebkitOverflowScrolling: "touch" }}
+        className={`relative z-10 flex flex-col overflow-y-auto overflow-x-hidden transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
+        style={{
+          height: '100dvh',
+          WebkitOverflowScrolling: "touch",
+        }}
       >
         <HeroSection onPrimaryClick={() => scrollToSection(4)} onSecondaryClick={() => scrollToSection(1)} />
         <WorkSection />
@@ -165,6 +176,8 @@ export default function HomeClient() {
         <ProcessSection />
         {/* <AboutSection scrollToSection={scrollToSection} /> */}
         <ContactSection />
+        {/* Spacer to allow content to scroll behind the bottom toolbar */}
+        <div className="shrink-0" style={{ height: 'env(safe-area-inset-bottom, 0px)' }} />
       </div>
 
       <style jsx global>{`

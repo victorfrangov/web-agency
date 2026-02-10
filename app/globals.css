@@ -109,6 +109,22 @@
 }
 
 html, body {
-  height: 100dvh;
+  height: 100%;
   overflow: hidden;
+  background: #0D1B2A;
+  /* Extend background into safe areas */
+  padding: 0;
+  margin: 0;
+}
+
+/* Ensure the body background extends behind the toolbar */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  body {
+    padding-bottom: 0;
+  }
+
+  html {
+    /* Force the background to extend past the viewport */
+    min-height: calc(100% + env(safe-area-inset-bottom));
+  }
 }
