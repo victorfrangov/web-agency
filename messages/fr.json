@@ -5,9 +5,9 @@
 	},
 	"hero": {
 		"badge": "Agence web marketing",
-		"titleLine1": "accroche",
-		"titleLine2": "accroche2",
-		"description": "[A CHANGER] Nous créons des sites rapides, responsives et esthétiques pour donner à votre entreprise plus de visibilité, crédibilité et clients. Nous commençons par une démo pour que vous voyiez le concept, puis nous itérons ensemble.",
+		"titleLine1": "Sortez du lot,",
+		"titleLine2": "Soyez reconnu",
+		"description": "Nous bâtissons la présence numérique que votre entreprise mérite. Des sites web haute performance à la visibilité stratégique, nous veillons à ce que vous ne soyez pas seulement vu, mais mémorisé.",
 		"primaryCta": "Demander une démo",
 		"secondaryCta": "Voir nos réalisations",
 		"scrollHint": "Faites défiler pour en savoir plus"
@@ -16,7 +16,7 @@
 		"home": "Accueil",
 		"work": "Projets",
 		"services": "Services",
-		"about": "À propos",
+		"about": "Processus",
 		"contact": "Contact",
 		"getStarted": "Commencer",
 		"lang": "FR"
@@ -26,7 +26,7 @@
 		"subtitle": "/ Réalisations récentes",
 		"projects": [
       {
-        "title": "Votre prochain project!",
+        "title": "Votre prochain projet!",
         "category": "Contactez-nous pour le réaliser",
         "link": ""
       },
@@ -51,20 +51,20 @@
 		"title": "Services pour développer votre entreprise",
 		"subtitle": "Gagnez en visibilité et faites de vos visiteurs des clients",
 		"cards": [
+      {
+        "title": "SEO & Performance",
+        "description": "Optimisation technique et vitesse pour améliorer votre référencement et retenir vos visiteurs."
+      },
 			{
-				"title": "[A Changer] Design axé conversion",
-				"description": "[A changer] Des designs clairs, des messages persuasifs et des appels à l'action efficaces pour transformer les visiteurs en clients."
-			},
-			{
-				"title": "SEO & Performance",
-				"description": "Optimisation technique et vitesse pour améliorer votre référencement et retenir vos visiteurs."
+				"title": "Reconnaissance de marque",
+				"description": "Publicités ciblées et stratégies de contenu pour renforcer votre présence en ligne et attirer votre public idéal."
 			},
 			{
 				"title": "Empreinte numérique",
 				"description": "Identité visuelle cohérente pour renforcer la reconnaissance de votre marque et inspirer confiance."
 			},
 			{
-				"title": "[A Changer] Implémentation technique & Support",
+				"title": "Mises à jour & Support",
 				"description": "Support technique pour garantir que votre site reste rapide, sécurisé et facile à mettre à jour à mesure que votre entreprise grandit."
 			}
 		]
@@ -78,8 +78,8 @@
 	},
 	"process": {
 		"heading": "Notre processus",
-		"subheading": "/ [A changer] Collaboratif, transparent, orienté résultats",
-		"description": "[A changer] Un parcours collaboratif du concept au lancement, conçu pour donner vie à votre vision avec précision et créativité.",
+		"subheading": "/ Découvrez notre approche collaborative",
+		"description": "De la stratégie initiale à la mise en ligne, nous suivons un parcours rigoureux conçu pour une seule chose : maximiser votre visibilité et propulser votre entreprise devant vos futurs clients.",
 		"step1Title": "Découverte & Stratégie",
 		"step1Description": "Nous explorons en profondeur vos objectifs, votre audience et votre marché pour créer une base stratégique pour votre projet.",
 		"step2Title": "Design & Prototype",

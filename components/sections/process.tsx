@@ -1,10 +1,9 @@
 "use client"
 
-import { MagneticButton } from "@/components/magnetic-button"
 import { useReveal } from "@/hooks/use-reveal"
 import { useTranslations } from "next-intl"
 
-export function ProcessSection({ scrollToSection }: { scrollToSection?: (index: number) => void }) {
+export function ProcessSection() {
   const t = useTranslations("process")
 
   const { ref, isVisible } = useReveal(0.3)
@@ -46,10 +45,10 @@ export function ProcessSection({ scrollToSection }: { scrollToSection?: (index: 
                 isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
               }`}
             >
-              <h2 className="mb-3 font-sans text-3xl font-light leading-[1.1] tracking-tight text-foreground md:mb-4 md:text-6xl lg:text-7xl">
+              <h2 className="mb-3 font-sans text-5xl font-light leading-none tracking-tight text-foreground md:mb-4 md:text-7xl lg:text-8xl">
                 {t("heading")}
               </h2>
-              <p className="max-w-md font-mono text-xs text-foreground/60 md:text-sm">{t("subheading")}</p>
+              <p className="max-w-md font-mono text-sm text-foreground/60 md:text-base">{t("subheading")}</p>
             </div>
 
             <div
@@ -58,7 +57,7 @@ export function ProcessSection({ scrollToSection }: { scrollToSection?: (index: 
               }`}
               style={{ transitionDelay: "200ms" }}
             >
-              <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">{t("description")}</p>
+              <p className="max-w-md text-base leading-relaxed text-foreground/90 md:text-xl">{t("description")}</p>
             </div>
           </div>
 
@@ -80,31 +79,17 @@ export function ProcessSection({ scrollToSection }: { scrollToSection?: (index: 
                     transitionDelay: `${300 + i * 150}ms`,
                   }}
                 >
-                  <div className="flex-shrink-0 font-mono text-2xl font-light text-foreground/60 md:text-3xl">
+                  <div className="shrink-0 font-mono text-2xl font-light text-foreground/60 md:text-3xl">
                     {step.number}
                   </div>
-                  <div className="space-y-1">
-                    <div className="font-sans text-base font-light text-foreground md:text-xl">{step.title}</div>
-                    <div className="text-xs leading-relaxed text-foreground/70 md:text-sm">{step.description}</div>
+                  <div className="space-y-2">
+                    <div className="font-sans text-lg font-light text-foreground md:text-2xl">{step.title}</div>
+                    <div className="text-sm leading-relaxed text-foreground/70 md:text-base">{step.description}</div>
                   </div>
                 </div>
               )
             })}
           </div>
-        </div>
-
-        <div
-          className={`mt-8 flex flex-wrap gap-3 transition-all duration-700 md:mt-16 md:gap-4 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-          }`}
-          style={{ transitionDelay: "900ms" }}
-        >
-          <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(4)}>
-            {t("primaryCta")}
-          </MagneticButton>
-          <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection?.(1)}>
-            {t("secondaryCta")}
-          </MagneticButton>
         </div>
       </div>
     </section>

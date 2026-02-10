@@ -5,9 +5,9 @@
 	},
 	"hero": {
 		"badge": "Marketing Web Agency",
-		"titleLine1": "Increase your visibility",
-		"titleLine2": "Attract more customers",
-		"description": "We build fast, responsive and beautiful websites that give your business greater visibility, credibility and customers. We start with a demo so you can see the concept, then iterate together to match your needs.",
+		"titleLine1": "Stand out,",
+		"titleLine2": "Be recognized",
+		"description": "We build the digital presence your business deserves. From high-performance websites to strategic visibility, we make sure you are not only seen, but remembered.",
 		"primaryCta": "Request a demo",
 		"secondaryCta": "View our work",
 		"scrollHint": "Scroll to learn more"
@@ -16,7 +16,7 @@
 		"home": "Home",
 		"work": "Projects",
 		"services": "Services",
-		"about": "About",
+		"about": "Process",
 		"contact": "Contact",
 		"getStarted": "Get started",
 		"lang": "EN"
@@ -51,21 +51,21 @@
 		"title": "Services to grow your business",
 		"subtitle": "Gain visibility and turn visitors into customers",
 		"cards": [
+      {
+        "title": "SEO & Performance",
+        "description": "Technical optimization and speed to improve your rankings and keep visitors engaged."
+      },
 			{
-				"title": "Conversion-focused design",
-				"description": "Clear designs, persuasive messaging and effective calls-to-action to turn visitors into customers."
+				"title": "Brand Awareness",
+				"description": "Targeted ads and content strategies to strengthen your online presence and attract your ideal audience."
 			},
 			{
-				"title": "SEO & Performance",
-				"description": "Technical optimization and speed to improve your rankings and keep visitors engaged."
-			},
-			{
-				"title": "Digital presence",
+				"title": "Digital Presence",
 				"description": "A cohesive visual identity to strengthen brand recognition and build trust."
 			},
 			{
-				"title": "Technical implementation & Support",
-				"description": "Technical support to keep your site fast, secure and easy to update as your business grows."
+				"title": "Updates & Support",
+				"description": "Technical support to ensure your site stays fast, secure and easy to update as your business grows."
 			}
 		]
 	},
@@ -78,21 +78,21 @@
 	},
 	"process": {
 		"heading": "Our process",
-		"subheading": "/ Collaborative, transparent, results-driven",
-		"description": "A collaborative journey from concept to launch, designed to bring your vision to life with precision and creativity.",
+		"subheading": "/ Discover our collaborative approach",
+		"description": "From initial strategy to launch, we follow a rigorous process designed for one goal: to maximize your visibility and put your business in front of your future customers.",
 		"step1Title": "Discovery & Strategy",
-		"step1Description": "We dive into your goals, audience and market to build a strong strategic foundation.",
+		"step1Description": "We dive deep into your goals, audience and market to build a strategic foundation for your project.",
 		"step2Title": "Design & Prototype",
 		"step2Description": "We deliver a functional demo so you can visualize the result from the start.",
 		"step3Title": "Development & Testing",
-		"step3Description": "We build your site with modern technologies, ensuring performance, accessibility and a smooth experience.",
+		"step3Description": "We build your site with modern technologies, ensuring performance, accessibility and smooth functionality.",
 		"step4Title": "Launch & Growth",
-		"step4Description": "Launch with full support, plus options to evolve and continue attracting customers.",
+		"step4Description": "Launch with full support; ongoing options to evolve and continue attracting customers.",
 		"primaryCta": "Start a project",
 		"secondaryCta": "View our work"
 	},
 	"contact": {
-		"heading": "Let’s talk about your project",
+		"heading": "Let's talk about your project",
 		"subtitle": "/ Get in touch",
 		"emailLabel": "Email",
 		"locationLabel": "Location",
@@ -103,6 +103,6 @@
 		"messagePlaceholder": "Tell us about your project...",
 		"send": "Send request",
 		"sending": "Sending...",
-		"success": "Thanks — we’ll get back to you shortly."
+		"success": "Thanks — we'll get back to you shortly."
 	}
 }

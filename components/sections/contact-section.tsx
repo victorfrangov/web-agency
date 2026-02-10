@@ -48,7 +48,7 @@ export function ContactSection() {
   return (
     <section
       ref={ref}
-      className="flex h-screen w-screen shrink-0 snap-start items-center px-4 pt-20 md:px-12 md:pt-0 lg:px-16"
+      className="flex h-screen w-screen shrink-0 snap-start items-center p-6 pt-20 md:px-12 md:pt-10 lg:px-16"
     >
       <div className="mx-auto w-full max-w-7xl">
         <div className="grid gap-8 md:grid-cols-[1.2fr_1fr] md:gap-16 lg:gap-24">
@@ -100,7 +100,7 @@ export function ContactSection() {
                 }`}
                 style={{ transitionDelay: "500ms" }}
               >
-                {["Twitter", "Instagram", "LinkedIn", "Dribbble"].map((social, i) => (
+                {["Facebook", "Instagram", "LinkedIn", "Dribbble"].map((social, i) => (
                   <a
                     key={social}
                     href="#"
