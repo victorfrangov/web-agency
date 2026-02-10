@@ -107,3 +107,20 @@
     backface-visibility: hidden;
   }
 }
+
+.main-viewport {
+  /* WebKit legacy */
+  height: -webkit-fill-available;
+  /* modern device-aware viewport */
+  height: 100dvh;
+  /* fallback using --vh */
+  height: calc(var(--vh, 1vh) * 100);
+
+  min-height: 100dvh;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* ensure shader covers full viewport */
+.shader-full {
+  min-height: 100dvh;
+}

@@ -2,7 +2,6 @@
 
 import { Shader, ChromaFlow, Swirl } from "shaders/react"
 import { CustomCursor } from "@/components/custom-cursor"
-import { GrainOverlay } from "@/components/grain-overlay"
 import { HeroSection } from "@/components/sections/hero-section"
 import { WorkSection } from "@/components/sections/work-section"
 import { ServicesSection } from "@/components/sections/services-section"
@@ -133,19 +132,13 @@ export default function HomeClient() {
   }, [currentSection])
 
   return (
-    <main
-      className="relative h-screen w-full overflow-hidden bg-background"
-      // keep the var(--vh) behavior for layout but ensure the background/shader covers the full device viewport
-      style={{ height: "calc(var(--vh, 1vh) * 100)", minHeight: "100dvh" }}
-    >
+    <main className="relative w-full overflow-hidden bg-background main-viewport">
       {!isTouchDevice && <CustomCursor />}
-      <GrainOverlay />
 
       <div
         ref={shaderContainerRef}
-        className={`fixed inset-0 z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
-        // ensure shader covers the full device viewport (including under safari UI)
-        style={{ minHeight: "100dvh" }}
+        className={`fixed inset-0 z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} shader-full`}
+        style={{ contain: "strict" }}
       >
         <Shader className="h-full w-full">
           <Swirl
@@ -177,21 +170,13 @@ export default function HomeClient() {
         <div className="absolute inset-0 bg-black/20" />
       </div>
 
-      <div className={`${isLoaded ? "opacity-100" : "opacity-0"}`}>
-        <Nav currentSection={currentSection} onNavigate={scrollToSection} />
-      </div>
+      <Nav currentSection={currentSection} onNavigate={scrollToSection} isLoaded={isLoaded} />
 
-      <div
-        ref={scrollContainerRef}
-        data-scroll-container
-        className={`relative z-10 flex flex-col h-screen overflow-y-auto overflow-x-hidden transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
-        // add safe-area inset padding so content isn't obscured by the bottom search/home bar and let content flow under it
-        style={{
-          scrollbarWidth: "none",
-          msOverflowStyle: "none",
-          height: "calc(var(--vh, 1vh) * 100)",
-          paddingBottom: "env(safe-area-inset-bottom)",
-        }}
+      <div 
+        ref={scrollContainerRef} 
+        data-scroll-container 
+        className={`relative z-10 flex flex-col overflow-y-auto overflow-x-hidden transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"} main-viewport`}
+        style={{ paddingBottom: "env(safe-area-inset-bottom)", WebkitOverflowScrolling: "touch" }}
       >
         <HeroSection onPrimaryClick={() => scrollToSection(4)} onSecondaryClick={() => scrollToSection(1)} />
         <WorkSection />
