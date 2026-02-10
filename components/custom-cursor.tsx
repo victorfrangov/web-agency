@@ -5,46 +5,52 @@ import { useEffect, useRef } from "react"
 export function CustomCursor() {
   const outerRef = useRef<HTMLDivElement>(null)
   const innerRef = useRef<HTMLDivElement>(null)
-  const positionRef = useRef({ x: 0, y: 0 })
-  const targetPositionRef = useRef({ x: 0, y: 0 })
-  const isPointerRef = useRef(false)
 
   useEffect(() => {
-    let animationFrameId: number
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = e.clientX
+      const y = e.clientY
 
-    const lerp = (start: number, end: number, factor: number) => {
-      return start + (end - start) * factor
-    }
-
-    const updateCursor = () => {
-      positionRef.current.x = lerp(positionRef.current.x, targetPositionRef.current.x, 0.15)
-      positionRef.current.y = lerp(positionRef.current.y, targetPositionRef.current.y, 0.15)
-
-      if (outerRef.current && innerRef.current) {
-        const scale = isPointerRef.current ? 1.5 : 1
-        const innerScale = isPointerRef.current ? 0.5 : 1
-
-        outerRef.current.style.transform = `translate3d(${positionRef.current.x}px, ${positionRef.current.y}px, 0) translate(-50%, -50%) scale(${scale})`
-        innerRef.current.style.transform = `translate3d(${positionRef.current.x}px, ${positionRef.current.y}px, 0) translate(-50%, -50%) scale(${innerScale})`
+      const target = e.target as HTMLElement | null
+      let isPointer = false
+      if (target) {
+        const computed = window.getComputedStyle(target)
+        isPointer =
+          computed.cursor === "pointer" ||
+          target.tagName === "BUTTON" ||
+          target.tagName === "A"
       }
 
-      animationFrameId = requestAnimationFrame(updateCursor)
+      // keep size constant; only switch colors for clickable targets
+      if (outerRef.current && innerRef.current) {
+        outerRef.current.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`
+        innerRef.current.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`
+
+        const outerDot = outerRef.current.firstElementChild as HTMLElement | null
+        const innerDot = innerRef.current.firstElementChild as HTMLElement | null
+
+        if (outerDot) {
+          outerDot.style.borderColor = isPointer ? "#FFD166" : "rgba(255,255,255,1)"
+          outerDot.style.transition = "border-color 120ms linear"
+        }
+        if (innerDot) {
+          innerDot.style.background = isPointer ? "#FFD166" : "rgba(255,255,255,1)"
+          innerDot.style.transition = "background-color 120ms linear"
+        }
+      }
     }
 
-    const handleMouseMove = (e: MouseEvent) => {
-      targetPositionRef.current = { x: e.clientX, y: e.clientY }
-
-      const target = e.target as HTMLElement
-      isPointerRef.current =
-        window.getComputedStyle(target).cursor === "pointer" || target.tagName === "BUTTON" || target.tagName === "A"
+    const hideOnTouch = () => {
+      if (outerRef.current) outerRef.current.style.display = "none"
+      if (innerRef.current) innerRef.current.style.display = "none"
     }
 
     window.addEventListener("mousemove", handleMouseMove, { passive: true })
-    animationFrameId = requestAnimationFrame(updateCursor)
+    window.addEventListener("touchstart", hideOnTouch, { passive: true })
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove)
-      cancelAnimationFrame(animationFrameId)
+      window.removeEventListener("touchstart", hideOnTouch)
     }
   }, [])
 
@@ -52,17 +58,17 @@ export function CustomCursor() {
     <>
       <div
         ref={outerRef}
-        className="pointer-events-none fixed left-0 top-0 z-50 mix-blend-difference will-change-transform"
-        style={{ contain: "layout style paint" }}
+        className="pointer-events-none fixed left-0 top-0 mix-blend-difference will-change-transform"
+        style={{ contain: "layout style paint", transform: "translate3d(-9999px, -9999px, 0)", zIndex: 99999 }}
       >
-        <div className="h-4 w-4 rounded-full border-2 border-white" />
+        <div className="h-4 w-4 rounded-full border-2" style={{ borderColor: "rgba(255,255,255,1)" }} />
       </div>
       <div
         ref={innerRef}
-        className="pointer-events-none fixed left-0 top-0 z-50 mix-blend-difference will-change-transform"
-        style={{ contain: "layout style paint" }}
+        className="pointer-events-none fixed left-0 top-0 mix-blend-difference will-change-transform"
+        style={{ contain: "layout style paint", transform: "translate3d(-9999px, -9999px, 0)", zIndex: 99999 }}
       >
-        <div className="h-2 w-2 rounded-full bg-white" />
+        <div className="h-2 w-2 rounded-full" style={{ background: "rgba(255,255,255,1)" }} />
       </div>
     </>
   )

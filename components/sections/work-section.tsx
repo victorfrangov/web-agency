@@ -96,7 +96,6 @@ function ProjectCard({
                   {t(`projects.${index}.title`)}
                 </h3>
               </Link>
-              <span className="text-foreground/50 transition-transform duration-300 group-hover/link:translate-x-2">↗</span>
             </div>
           ) : (
             <h3 className="mb-1 font-sans text-2xl font-light text-foreground md:text-3xl lg:text-4xl">

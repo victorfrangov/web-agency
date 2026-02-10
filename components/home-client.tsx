@@ -12,15 +12,43 @@ import { ContactSection } from "@/components/sections/contact-section"
 import { Nav } from "@/components/sections/nav"
 
 import { useRef, useEffect, useState } from "react"
-
+ 
 export default function HomeClient() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [currentSection, setCurrentSection] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
-  const touchStartY = useRef(0)
-  const touchStartX = useRef(0)
+  const [isTouchDevice, setIsTouchDevice] = useState(false)
   const shaderContainerRef = useRef<HTMLDivElement>(null)
   const scrollThrottleRef = useRef<number | undefined>(undefined)
+ 
+  // detect touch devices / mobile to disable custom cursor
+  useEffect(() => {
+    const isTouch =
+      typeof window !== "undefined" &&
+      ("ontouchstart" in window ||
+        (navigator as any).maxTouchPoints > 0 ||
+        window.matchMedia?.("(hover: none)").matches)
+    setIsTouchDevice(Boolean(isTouch))
+  }, [])
+ 
+  // ensure correct viewport height on mobile (iOS Safari) using --vh
+  useEffect(() => {
+    const setVh = () => {
+      const vh = window.visualViewport?.height ?? window.innerHeight
+      document.documentElement.style.setProperty("--vh", `${vh * 0.01}px`)
+    }
+
+    setVh()
+    window.addEventListener("resize", setVh)
+    window.addEventListener("orientationchange", setVh)
+    window.visualViewport?.addEventListener("resize", setVh)
+
+    return () => {
+      window.removeEventListener("resize", setVh)
+      window.removeEventListener("orientationchange", setVh)
+      window.visualViewport?.removeEventListener("resize", setVh)
+    }
+  }, [])
 
   useEffect(() => {
     const checkShaderReady = () => {
@@ -55,90 +83,16 @@ export default function HomeClient() {
   // SCROLL TO SECTION — vertical
   const scrollToSection = (index: number) => {
     if (scrollContainerRef.current) {
-      const sectionHeight = scrollContainerRef.current.offsetHeight
+      // scroll to the actual section element instead of forcing a section-height snap
+      const target = scrollContainerRef.current.children[index] as HTMLElement | undefined
+      const top = target ? target.offsetTop : scrollContainerRef.current.offsetHeight * index
       scrollContainerRef.current.scrollTo({
-        top: sectionHeight * index,
+        top,
         behavior: "smooth",
       })
       setCurrentSection(index)
     }
   }
-
-  useEffect(() => {
-    const handleTouchStart = (e: TouchEvent) => {
-      touchStartY.current = e.touches[0].clientY
-      touchStartX.current = e.touches[0].clientX
-    }
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (Math.abs(e.touches[0].clientY - touchStartY.current) > 10) {
-        e.preventDefault()
-      }
-    }
-
-    const handleTouchEnd = (e: TouchEvent) => {
-      const touchEndY = e.changedTouches[0].clientY
-      const touchEndX = e.changedTouches[0].clientX
-      const deltaY = touchStartY.current - touchEndY
-      const deltaX = touchStartX.current - touchEndX
-
-      if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > 50) {
-        if (deltaY > 0 && currentSection < 4) {
-          scrollToSection(currentSection + 1)
-        } else if (deltaY < 0 && currentSection > 0) {
-          scrollToSection(currentSection - 1)
-        }
-      }
-    }
-
-    const container = scrollContainerRef.current
-    if (container) {
-      container.addEventListener("touchstart", handleTouchStart, { passive: true })
-      container.addEventListener("touchmove", handleTouchMove, { passive: false })
-      container.addEventListener("touchend", handleTouchEnd, { passive: true })
-    }
-
-    return () => {
-      if (container) {
-        container.removeEventListener("touchstart", handleTouchStart)
-        container.removeEventListener("touchmove", handleTouchMove)
-        container.removeEventListener("touchend", handleTouchEnd)
-      }
-    }
-  }, [currentSection])
-
-  // WHEEL — vertical scroll
-  useEffect(() => {
-    const handleWheel = (e: WheelEvent) => {
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault()
-
-        if (!scrollContainerRef.current) return
-
-        scrollContainerRef.current.scrollBy({
-          top: e.deltaY,
-          behavior: "instant",
-        })
-
-        const sectionHeight = scrollContainerRef.current.offsetHeight
-        const newSection = Math.round(scrollContainerRef.current.scrollTop / sectionHeight)
-        if (newSection !== currentSection) {
-          setCurrentSection(newSection)
-        }
-      }
-    }
-
-    const container = scrollContainerRef.current
-    if (container) {
-      container.addEventListener("wheel", handleWheel, { passive: false })
-    }
-
-    return () => {
-      if (container) {
-        container.removeEventListener("wheel", handleWheel)
-      }
-    }
-  }, [currentSection])
 
   // SCROLL — detect vertical section
   useEffect(() => {
@@ -179,8 +133,11 @@ export default function HomeClient() {
   }, [currentSection])
 
   return (
-    <main className="relative h-screen w-full overflow-hidden bg-background">
-      <CustomCursor />
+    <main
+      className="relative h-screen w-full overflow-hidden bg-background"
+      style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+    >
+      {!isTouchDevice && <CustomCursor />}
       <GrainOverlay />
 
       <div
@@ -225,10 +182,8 @@ export default function HomeClient() {
       <div
         ref={scrollContainerRef}
         data-scroll-container
-        className={`relative z-10 flex flex-col h-screen overflow-y-auto overflow-x-hidden transition-opacity duration-700 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        }`}
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        className={`relative z-10 flex flex-col h-screen overflow-y-auto overflow-x-hidden transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none", height: "calc(var(--vh, 1vh) * 100)" }}
       >
         <HeroSection onPrimaryClick={() => scrollToSection(4)} onSecondaryClick={() => scrollToSection(1)} />
         <WorkSection />

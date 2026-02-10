@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   const base = "" // will have the domain here
 
   return {
-    title: "Title",
+    title: "Web Agency",
     description: "description",
     metadataBase: new URL("https://example.com"),
   }

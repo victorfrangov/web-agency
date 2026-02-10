@@ -27,7 +27,7 @@ export function HeroSection({ onPrimaryClick, onSecondaryClick }: HeroSectionPro
           <p className="mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
           <span className="text-pretty">{t("description")}</span>
         </p>
-        <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-4 duration-1000 delay-300 sm:flex-row sm:items-center">
+        <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-6 duration-1000 delay-300 sm:flex-row sm:items-center">
           <MagneticButton size="lg" variant="primary" onClick={onPrimaryClick}>
             {t("primaryCta")}
           </MagneticButton>

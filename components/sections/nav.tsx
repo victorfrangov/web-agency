@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation"
 import { useLocale, useTranslations } from "next-intl"
+import { MagneticButton } from "@/components/magnetic-button"
 
 interface NavProps {
   currentSection: number
@@ -25,6 +26,7 @@ export function Nav({ currentSection, onNavigate }: NavProps) {
       <button
         onClick={() => onNavigate(0)}
         className="flex items-center gap-2 transition-transform hover:scale-105"
+        aria-label="Home"
       >
         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-foreground/15 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-foreground/25">
           <span className="font-sans text-xl font-bold text-foreground">S</span>
@@ -52,12 +54,13 @@ export function Nav({ currentSection, onNavigate }: NavProps) {
       </div>
 
       <div className="flex items-center gap-4">
-        <button
+        <MagneticButton
           onClick={() => onNavigate(4)}
           className="hidden rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background md:inline-flex"
         >
-          {t("getStarted") || (locale === "fr" ? "Commencer" : "Get started")}
-        </button>
+          {t("getStarted")}
+        </MagneticButton>
+
         <button
           onClick={toggleLang}
           aria-label="Toggle language"
