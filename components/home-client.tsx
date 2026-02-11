@@ -34,16 +34,16 @@ export default function HomeClient() {
   const [isCapturing, setIsCapturing] = useState(false)
   const [captureProgress, setCaptureProgress] = useState<number>(0)
   const jsZipLoadedRef = useRef<boolean>(false)
-  const [videoError, setVideoError] = useState<string | null>(null)
-  const [videoStatus, setVideoStatus] = useState<string>('idle')
   const scrollThrottleRef = useRef<number | undefined>(undefined)
  
   // detect touch devices / mobile to disable custom cursor
   useEffect(() => {
-    const isClient = typeof window !== "undefined"
-    const smallScreen = isClient && window.innerWidth <= 900
-    // Force the video branch for small screens (<=900px)
-    setIsTouchDevice(Boolean(smallScreen))
+    const isTouch =
+      typeof window !== "undefined" &&
+      ("ontouchstart" in window ||
+        (navigator as any).maxTouchPoints > 0 ||
+        window.matchMedia?.("(hover: none)").matches)
+    setIsTouchDevice(Boolean(isTouch))
   }, [])
  
   useEffect(() => {
@@ -483,28 +483,10 @@ export default function HomeClient() {
               playsInline
               preload="auto"
               poster="/videos/bg-poster.jpg"
-              onLoadedMetadata={() => { console.log('video loadedmetadata'); setVideoStatus('loadedmetadata') }}
-              onCanPlay={() => { console.log('video canplay'); setVideoStatus('canplay') }}
-              onPlaying={() => { console.log('video playing'); setVideoStatus('playing'); setVideoError(null) }}
-              onWaiting={() => { console.log('video waiting'); setVideoStatus('waiting') }}
-              onError={(e) => {
-                const el = e.currentTarget as HTMLVideoElement
-                const err = el?.error
-                const msg = err ? `code:${err.code} message:${(err as any).message || 'n/a'}` : 'unknown'
-                console.warn('Video error event', err)
-                setVideoError(msg)
-                setVideoStatus('error')
-              }}
             >
               <source src="/shader.mp4" type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-black/20" />
-            {videoStatus !== 'playing' && (
-              <div className="pointer-events-none fixed left-4 bottom-4 z-40 rounded bg-black/60 text-white text-xs px-2 py-1">
-                <div>Status: {videoStatus}</div>
-                {videoError && <div className="text-red-300">Error: {videoError}</div>}
-              </div>
-            )}
           </div>
         ) : (
           <div ref={shaderContainerRef} className={`fixed inset-0 z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
