@@ -41,13 +41,9 @@ export default function HomeClient() {
   // detect touch devices / mobile to disable custom cursor
   useEffect(() => {
     const isClient = typeof window !== "undefined"
-    const hasTouchAPI = isClient && ("ontouchstart" in window || (navigator as any).maxTouchPoints > 0)
-    const prefersNoHover = isClient && window.matchMedia?.("(hover: none)").matches
-    const ua = isClient ? (navigator.userAgent || navigator.vendor || (window as any).opera) : ''
-    const isUAmobile = /Mobi|Android|iPhone|iPad|iPod/i.test(ua)
     const smallScreen = isClient && window.innerWidth <= 900
-    const isTouch = Boolean(hasTouchAPI || prefersNoHover || isUAmobile || smallScreen)
-    setIsTouchDevice(isTouch)
+    // Force the video branch for small screens (<=900px)
+    setIsTouchDevice(Boolean(smallScreen))
   }, [])
  
   useEffect(() => {
