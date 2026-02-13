@@ -468,59 +468,57 @@ export default function HomeClient() {
         )}
       </div>
 
-      <div
-        ref={shaderContainerRef}
-        className={`fixed inset-0 z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
-        style={{ contain: "strict" }}
-      >
-        {isTouchDevice ? (
-          <div className="fixed inset-0 z-0">
-            <video
-              className="absolute inset-0 w-full h-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              poster="/videos/bg-poster.jpg"
-            >
-              <source src="/shader.mp4" type="video/mp4" />
-            </video>
-            <div className="absolute inset-0 bg-black/20" />
-          </div>
-        ) : (
-          <div ref={shaderContainerRef} className={`fixed inset-0 z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
-            <Shader className="h-full w-full">
-              <Swirl
-                colorA="#000408"
-                colorB="#071425"
-                speed={0.8}
-                detail={0.8}
-                blend={50}
-                coarseX={40}
-                coarseY={40}
-                mediumX={40}
-                mediumY={40}
-                fineX={40}
-                fineY={40}
-              />
-              <ChromaFlow
-                baseColor="#02060a"
-                upColor="#081525"
-                downColor="#030303"
-                leftColor="#081525"
-                rightColor="#000000"
-                intensity={0.9}
-                radius={1.8}
-                momentum={25}
-                maskType="alpha"
-                opacity={0.97}
-              />
-            </Shader>
-            <div className="absolute inset-0 bg-black/20" />
-          </div>
-        )}
-      </div>
+      {isTouchDevice ? (
+        <div className="fixed inset-0 z-0">
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster="/videos/bg-poster.jpg"
+          >
+            <source src="/shader.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
+      ) : (
+        <div
+          ref={shaderContainerRef}
+          className={`fixed inset-0 z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
+          style={{ contain: "strict" }}
+        >
+          <Shader className="h-full w-full">
+            <Swirl
+              colorA="#000408"
+              colorB="#071425"
+              speed={0.8}
+              detail={0.8}
+              blend={50}
+              coarseX={40}
+              coarseY={40}
+              mediumX={40}
+              mediumY={40}
+              fineX={40}
+              fineY={40}
+            />
+            <ChromaFlow
+              baseColor="#02060a"
+              upColor="#081525"
+              downColor="#030303"
+              leftColor="#081525"
+              rightColor="#000000"
+              intensity={0.9}
+              radius={1.8}
+              momentum={25}
+              maskType="alpha"
+              opacity={0.97}
+            />
+          </Shader>
+          <div className="absolute inset-0 bg-black/20" />
+        </div>
+      )}
 
       {/* <Nav currentSection={currentSection} onNavigate={scrollToSection} isLoaded={isLoaded} /> */}
 
