@@ -88,6 +88,17 @@
     @apply bg-background text-foreground;
   }
 
+  /* Safari safe area support */
+  html {
+    height: 100%;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+
+  body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
   [data-scroll-container] {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
@@ -105,6 +116,20 @@
   button {
     transform: translateZ(0);
     backface-visibility: hidden;
+  }
+
+  /* Glassmorphic blur header */
+  .glass-header {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(13, 27, 42, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Blur scrolling content underneath */
+  .blur-scroll-mask {
+    mask-image: linear-gradient(to bottom, transparent 0%, black 120px);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 120px);
   }
 }
 

@@ -423,8 +423,16 @@ export default function HomeClient() {
     <main className="relative h-[100dvh] w-full overflow-hidden bg-[#0D1B2A]">
       {!isTouchDevice && <CustomCursor />}
 
+      {/* Glassmorphic header that extends into Safari UI */}
+      <div className="glass-header fixed top-0 left-0 right-0 z-20 h-[120px] pointer-events-none" 
+           style={{ 
+             paddingTop: 'env(safe-area-inset-top)',
+           }} 
+      />
+
       {/* CCapture controls */}
-      <div className="fixed top-4 right-4 z-30 flex items-center gap-2 bg-black/40 p-2 rounded">
+      <div className="fixed top-4 right-4 z-30 flex items-center gap-2 bg-black/40 p-2 rounded" 
+           style={{ marginTop: 'env(safe-area-inset-top)' }}>
         <select
           value={captureFormat}
           onChange={(e) => setCaptureFormat(e.target.value)}
@@ -526,13 +534,18 @@ export default function HomeClient() {
         ref={scrollContainerRef}
         data-scroll-container
         className={`relative z-10 flex h-full flex-col overflow-y-auto overflow-x-hidden transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}
+        style={{ 
+          paddingTop: 'calc(env(safe-area-inset-top) + 0px)',
+        }}
       >
-        <HeroSection onPrimaryClick={() => scrollToSection(4)} onSecondaryClick={() => scrollToSection(1)} />
-        <WorkSection />
-        <ServicesSection />
-        <ProcessSection />
-        {/* <AboutSection scrollToSection={scrollToSection} /> */}
-        <ContactSection />
+        <div className="blur-scroll-mask">
+          <HeroSection onPrimaryClick={() => scrollToSection(4)} onSecondaryClick={() => scrollToSection(1)} />
+          <WorkSection />
+          <ServicesSection />
+          <ProcessSection />
+          {/* <AboutSection scrollToSection={scrollToSection} /> */}
+          <ContactSection />
+        </div>
       </div>
     </main>
   )
