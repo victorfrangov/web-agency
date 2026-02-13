@@ -1,10 +1,4 @@
 export const dynamic = "force-static"
-export const viewport = {
-  width: "device-width",
-  initialScale: 1,
-  viewportFit: "cover",
-  themeColor: "#0D1B2A"
-}
 
 import type React from "react"
 import { Geist, Geist_Mono } from "next/font/google"
@@ -25,8 +19,8 @@ const geistMono = Geist_Mono({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="bg-[#0D1B2A]">
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-[#0D1B2A]`}>
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>

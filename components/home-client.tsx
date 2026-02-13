@@ -492,8 +492,8 @@ export default function HomeClient() {
           <div ref={shaderContainerRef} className={`fixed inset-0 z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
             <Shader className="h-full w-full">
               <Swirl
-                colorA="#0D1B2A"
-                colorB="#415A77"
+                colorA="#000408"
+                colorB="#071425"
                 speed={0.8}
                 detail={0.8}
                 blend={50}
@@ -505,11 +505,11 @@ export default function HomeClient() {
                 fineY={40}
               />
               <ChromaFlow
-                baseColor="#1B263B"
-                upColor="#415A77"
-                downColor="#E0E1DD"
-                leftColor="#778DA9"
-                rightColor="#0D1B2A"
+                baseColor="#02060a"
+                upColor="#081525"
+                downColor="#030303"
+                leftColor="#081525"
+                rightColor="#000000"
                 intensity={0.9}
                 radius={1.8}
                 momentum={25}
