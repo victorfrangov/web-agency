@@ -8,12 +8,14 @@ export function generateStaticParams(): { locale: string }[] {
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
   const resolvedParams = await params
   const locale = resolvedParams?.locale ?? "en"
-  const base = "" // will have the domain here
 
   return {
     title: "Web Agency",
     description: "description",
-    metadataBase: new URL("https://example.com")
+    metadataBase: new URL("https://example.com"),
+    other: {
+      "theme-color": "#1e1e1e",
+    },
   }
 }
 
