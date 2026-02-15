@@ -12,10 +12,7 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   return {
     title: "Web Agency",
     description: "description",
-    metadataBase: new URL("https://example.com"),
-    other: {
-      "theme-color": "#1e1e1e",
-    },
+    metadataBase: new URL("https://example.com")
   }
 }
 
