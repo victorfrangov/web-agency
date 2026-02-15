@@ -85,18 +85,12 @@
     cursor: none;
   }
 
-  html {
-    background-color: var(--background);
-    min-height: 100%;
-    min-height: 100dvh;
-    min-height: -webkit-fill-available;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-    min-height: 100%;
-    min-height: 100dvh;
-    min-height: -webkit-fill-available;
+  [data-scroll-container] {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
 
   section {

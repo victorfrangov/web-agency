@@ -109,17 +109,17 @@ export default function HomeClient() {
   }, [currentSection])
 
   return (
-    <main className="relative h-[100dvh] w-full overflow-hidden">
+    <main className="relative h-full w-full overflow-hidden">
       {!isTouchDevice && <CustomCursor />}
 
-      {/* <div className="fixed inset-0 z-0">
+      <div className="fixed inset-0 z-0">
         <img
           src={bgImage}
           alt="Background"
           className="inset-0 h-full w-full object-cover"
           draggable={false}
         />
-      </div> */}
+      </div>
 
       <Nav currentSection={currentSection} onNavigate={scrollToSection} isLoaded={isLoaded} />
 
