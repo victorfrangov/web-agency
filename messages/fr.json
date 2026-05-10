@@ -30,15 +30,15 @@
         "category": "Contactez-nous pour le réaliser",
         "link": ""
       },
+	  {
+		"title": "Antoine Pavé",
+		"category": "Nettoyage de pavé",
+		"link": "https://v0-antoine-pave.vercel.app"
+	  },
       {
-        "title": "Panda Boba-Tea",
-        "category": "Chaines de bubble tea",
-        "link": "https://panda-boba-t-boucherville.vercel.app/"
-      },
-      {
-        "title": "Victor Frangov",
-        "category": "Portfolio en ligne",
-        "link": "https://victorfrangov.com"
+        "title": "Hôtel La Niche",
+        "category": "Hôtel pour animaux",
+        "link": "https://hotel-la-niche.vercel.app"
       },
       {
         "title": "SuperVitre",
@@ -96,6 +96,7 @@
 		"subtitle": "/ Entrez en contact",
 		"emailLabel": "Email",
 		"locationLabel": "Localisation",
+		"location": "Montréal, Canada\nLausanne, Suisse",
 		"nameLabel": "Nom",
 		"messageLabel": "Message",
 		"namePlaceholder": "Votre nom",

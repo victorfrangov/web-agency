@@ -31,14 +31,14 @@
 				"link": ""
 			},
 			{
-				"title": "Panda Boba-Tea",
-				"category": "Bubble tea chains",
-				"link": "https://panda-boba-t-boucherville.vercel.app/"
+				"title": "Antoine Pavé",
+				"category": "Paver cleaner",
+				"link": "https://v0-antoine-pave.vercel.app"
 			},
 			{
-				"title": "Victor Frangov",
-				"category": "Online portfolio",
-				"link": "https://victorfrangov.com"
+				"title": "Hotel La Niche",
+				"category": "Animal hotel",
+				"link": "https://hotel-la-niche.vercel.app"
 			},
 			{
 				"title": "SuperVitre",
@@ -96,6 +96,7 @@
 		"subtitle": "/ Get in touch",
 		"emailLabel": "Email",
 		"locationLabel": "Location",
+		"location": "Montréal, Canada\nLausanne, Switzerland",
 		"nameLabel": "Name",
 		"messageLabel": "Message",
 		"namePlaceholder": "Your name",

@@ -12,7 +12,7 @@ type Project = {
 const projects: Project[] = [
   { number: "01", year: "2026" },
   { number: "02", year: "2026" },
-  { number: "03", year: "2025" },
+  { number: "03", year: "2026" },
   { number: "04", year: "2025" },
 ]
 
