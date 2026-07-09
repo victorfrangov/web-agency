@@ -14,6 +14,7 @@ const projects: Project[] = [
   { number: "02", year: "2026" },
   { number: "03", year: "2026" },
   { number: "04", year: "2025" },
+  { number: "05", year: "2025" },
 ]
 
 export function WorkSection() {

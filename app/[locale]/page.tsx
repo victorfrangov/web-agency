@@ -10,9 +10,9 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
   const locale = resolvedParams?.locale ?? "en"
 
   return {
-    title: "Web Agency",
-    description: "description",
-    metadataBase: new URL("https://example.com")
+    title: "Situs Digital",
+    description: "Situs Digital",
+    metadataBase: new URL("https://situsdigital.com")
   }
 }
 

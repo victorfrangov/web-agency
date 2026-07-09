@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"title": "Agence web — Visibilité & Clients",
+		"title": "Situs Digital — Visibilité & Clients",
 		"description": "Sites rapides, responsives et beaux conçus pour augmenter la visibilité et attirer des clients."
 	},
 	"hero": {
@@ -31,9 +31,9 @@
         "link": ""
       },
 	  {
-		"title": "Antoine Pavé",
+		"title": "Pavé Larouche",
 		"category": "Nettoyage de pavé",
-		"link": "https://v0-antoine-pave.vercel.app"
+		"link": "https://pavelarouche.com"
 	  },
       {
         "title": "Hôtel La Niche",
@@ -44,6 +44,11 @@
         "title": "SuperVitre",
         "category": "Lavage de vitres",
         "link": "https://supervitre.net"
+      },
+	  {
+        "title": "Victor Frangov",
+        "category": "Portfolio",
+        "link": "https://victorfrangov.com"
       }
 		]
 	},

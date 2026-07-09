@@ -1,6 +1,6 @@
 {
 	"meta": {
-		"title": "Web Agency — Visibility & Clients",
+		"title": "Situs Digital — Visibility & Clients",
 		"description": "Fast, responsive and beautiful websites designed to increase visibility and attract customers."
 	},
 	"hero": {
@@ -31,7 +31,7 @@
 				"link": ""
 			},
 			{
-				"title": "Antoine Pavé",
+				"title": "Pavé Larouche",
 				"category": "Paver cleaner",
 				"link": "https://v0-antoine-pave.vercel.app"
 			},
@@ -44,6 +44,11 @@
 				"title": "SuperVitre",
 				"category": "Window cleaning",
 				"link": "https://supervitre.net"
+			},
+			{
+				"title": "Victor Frangov",
+				"category": "Portfolio",
+				"link": "https://victorfrangov.com"
 			}
 		]
 	},
