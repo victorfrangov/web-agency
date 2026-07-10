@@ -94,30 +94,7 @@ export default function HomeClient() {
     <main className="relative w-full">
       {!isTouchDevice && <CustomCursor />}
 
-      {/* shader background image — responsive per viewport */}
-      <div className="fixed inset-0 z-0 bg-background">
-        <picture>
-          <source
-            srcSet="/shader-bg/shader-ultrawide-3440x1440.png"
-            media="(min-width: 2560px)"
-          />
-          <source
-            srcSet="/shader-bg/shader-desktop-1920x1080.png"
-            media="(min-width: 1024px)"
-          />
-          <source
-            srcSet="/shader-bg/shader-tablet-1366x768.png"
-            media="(min-width: 640px)"
-          />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/shader-bg/shader-mobile-828x1792.png"
-            alt=""
-            aria-hidden="true"
-            className="h-full w-full object-cover"
-          />
-        </picture>
-      </div>
+
 
       <Nav currentSection={currentSection} onNavigate={scrollToSection} isLoaded={isLoaded} />
 
