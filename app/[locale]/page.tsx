@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
 
 export default async function Page(props: any) {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground">
       <main id="main-content">
         <HomeClient />
       </main>
