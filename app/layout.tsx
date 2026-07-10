@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 export const viewport: Viewport = {
-  themeColor: "#141f2e",
+  themeColor: "#1e2f44",
   viewportFit: "cover",
 }
 
