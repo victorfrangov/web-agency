@@ -1,9 +1,15 @@
 export const dynamic = "force-static"
 
 import type React from "react"
+import type { Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
+
+export const viewport: Viewport = {
+  themeColor: "#141f2e",
+  viewportFit: "cover",
+}
 
 const geistSans = Geist({
   subsets: ["latin"],

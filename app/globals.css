@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 
 :root {
-  --background: oklch(0.2367 0.0331 256.33);
+  --background: #141f2e;
   --foreground: oklch(0.98 0 0);
   --card: oklch(0.15 0 0);
   --card-foreground: oklch(0.98 0 0);
@@ -85,12 +85,9 @@
     cursor: none;
   }
 
-  [data-scroll-container] {
+  html {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    perspective: 1000px;
   }
 
   section {
@@ -107,11 +104,11 @@
 
 /* Hide scrollbar on touch/mobile devices only */
 @media (hover: none) and (pointer: coarse) {
-  [data-scroll-container] {
+  html {
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
-  [data-scroll-container]::-webkit-scrollbar {
+  html::-webkit-scrollbar {
     display: none;
   }
 }

@@ -26,18 +26,17 @@ export function Nav({ currentSection, onNavigate, isLoaded }: NavProps) {
         isLoaded ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-3 pointer-events-none"
       }`}
     >
-      <button
-        onClick={() => onNavigate(0)}
-        className="flex items-center gap-2 transition-transform hover:scale-105"
-        aria-label="Home"
-      >
-        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-foreground/15 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-foreground/25">
-          <span className="font-sans text-xl font-bold text-foreground">S</span>
-        </div>
-        <span className="font-sans text-xl font-semibold tracking-tight text-foreground">Situs Digital</span>
-      </button>
+      <div className="flex md:flex-1 justify-start">
+        <button
+          onClick={() => onNavigate(0)}
+          className="flex h-10 items-center transition-transform hover:scale-105"
+          aria-label="Home"
+        >
+          <span className="font-sans text-xl font-bold text-foreground">sd</span>
+        </button>
+      </div>
 
-      <div className="hidden items-center gap-8 md:flex">
+      <div className="hidden items-center justify-center gap-8 md:flex">
         {[t("home"), t("work"), t("services"), t("about"), t("contact")].map((label, index) => (
           <button
             key={label}
@@ -56,7 +55,7 @@ export function Nav({ currentSection, onNavigate, isLoaded }: NavProps) {
         ))}
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center justify-end gap-4 md:flex-1">
         <MagneticButton
           onClick={() => onNavigate(4)}
           className="hidden rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background md:inline-flex"
