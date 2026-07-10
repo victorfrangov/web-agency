@@ -89,6 +89,7 @@
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     background-color: var(--background);
+    overflow-x: hidden;
   }
 
   body {
@@ -97,6 +98,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    overflow-x: hidden;
   }
 
   @media (min-width: 1024px) {
