@@ -6,10 +6,18 @@ import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
+// export const viewport: Viewport = {
+//   themeColor: "#1e2f44",
+//   viewportFit: "cover",
+// }
+
 export const viewport: Viewport = {
-  themeColor: "#1e2f44",
-  viewportFit: "cover",
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover", // Keeps the viewport extending behind safe areas if needed
+  // Do NOT include themeColor here
 }
+
 
 const geistSans = Geist({
   subsets: ["latin"],
