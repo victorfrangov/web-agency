@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 
 interface MagneticButtonProps {
   children: React.ReactNode
@@ -23,9 +23,16 @@ export function MagneticButton({
   const ref = useRef<HTMLButtonElement>(null)
   const positionRef = useRef({ x: 0, y: 0 })
   const rafRef = useRef<number | null>(null)
+  const [hasHover, setHasHover] = useState(false)
+
+  useEffect(() => {
+    // Detect if device supports hover interactions
+    const mediaQuery = window.matchMedia("(hover: hover)")
+    setHasHover(mediaQuery.matches)
+  }, [])
 
   const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (!ref.current) return
+    if (!hasHover || !ref.current) return
 
     const rect = ref.current.getBoundingClientRect()
     const x = e.clientX - rect.left - rect.width / 2
