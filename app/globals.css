@@ -97,13 +97,6 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('/shader-bg/shader-mobile-828x1792.png');
-  }
-
-  @media (min-width: 640px) {
-    body {
-      background-image: url('/shader-bg/shader-tablet-1366x768.png');
-    }
   }
 
   @media (min-width: 1024px) {
