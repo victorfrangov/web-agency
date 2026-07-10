@@ -17,11 +17,11 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 })
     }
 
-    const RESEND_API_KEY = process.env.RESEND_API_KEY
-    const RESEND_FROM = process.env.RESEND_FROM || "v@victorfrangov.com"
-    const RESEND_TO = process.env.RESEND_TO || "v@victorfrangov.com"
+    const SMTP2GO_API_KEY = process.env.SMTP2GO_API_KEY
+    const SMTP2GO_FROM = process.env.SMTP2GO_FROM || "v@victorfrangov.com"
+    const SMTP2GO_TO = process.env.SMTP2GO_TO || "v@victorfrangov.com"
 
-    if (!RESEND_API_KEY) {
+    if (!SMTP2GO_API_KEY) {
       return NextResponse.json({ error: "Server misconfigured" }, { status: 500 })
     }
 
@@ -31,17 +31,17 @@ export async function POST(req: Request) {
       <p><strong>Message:</strong><br/>${escapeHtml(message).replace(/\n/g, "<br/>")}</p>
     `
 
-    const res = await fetch("https://api.resend.com/emails", {
+    const res = await fetch("https://api.smtp2go.com/v3/email/send", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${RESEND_API_KEY}`,
+        "X-Smtp2go-Api-Key": SMTP2GO_API_KEY,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: RESEND_FROM,
-        to: RESEND_TO,
+        sender: SMTP2GO_FROM,
+        to: [SMTP2GO_TO],
         subject: `Website inquiry — ${name}`,
-        html,
+        html_body: html,
       }),
     })
 
