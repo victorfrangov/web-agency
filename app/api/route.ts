@@ -18,8 +18,8 @@ export async function POST(req: Request) {
     }
 
     const SMTP2GO_API_KEY = process.env.SMTP2GO_API_KEY
-    const SMTP2GO_FROM = process.env.SMTP2GO_FROM || "v@victorfrangov.com"
-    const SMTP2GO_TO = process.env.SMTP2GO_TO || "v@victorfrangov.com"
+    const SMTP2GO_FROM = process.env.SMTP2GO_FROM || "victor.frangov@situsdigital.com"
+    const SMTP2GO_TO = process.env.SMTP2GO_TO || "victor.frangov@situsdigital.com"
 
     if (!SMTP2GO_API_KEY) {
       return NextResponse.json({ error: "Server misconfigured" }, { status: 500 })
