@@ -1,10 +1,10 @@
 {
 	"meta": {
-		"title": "Situs Digital — Visibilité & Clients",
-		"description": "Sites rapides, responsives et beaux conçus pour augmenter la visibilité et attirer des clients."
+		"title": "Situs Digital | Création de sites web à Montréal",
+		"description": "Situs Digital est une agence web Montréalaise qui crée des sites rapides, modernes et performants pour les entreprises locales. Audit gratuit disponible."
 	},
 	"hero": {
-		"badge": "Agence web marketing",
+		"badge": "Agence Web Montréalaise",
 		"titleLine1": "Sortez du lot,",
 		"titleLine2": "Soyez reconnu",
 		"description": "Nous bâtissons la présence numérique que votre entreprise mérite. Des sites web haute performance à la visibilité stratégique, nous veillons à ce que vous ne soyez pas seulement vu, mais mémorisé.",
@@ -70,7 +70,7 @@
 			},
 			{
 				"title": "Mises à jour & Support",
-				"description": "Support technique pour garantir que votre site reste rapide, sécurisé et facile à mettre à jour à mesure que votre entreprise grandit."
+				"description": "Support technique continu pour garantir que votre site reste rapide, sécurisé et facile à mettre à jour à mesure que votre entreprise grandit."
 			}
 		]
 	},
