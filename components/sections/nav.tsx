@@ -1,6 +1,6 @@
 "use client"
 
-import { useRouter } from "next/navigation"
+import Link from "next/link"
 import { useLocale, useTranslations } from "next-intl"
 import { MagneticButton } from "@/components/magnetic-button"
 
@@ -11,14 +11,17 @@ interface NavProps {
 }
 
 export function Nav({ currentSection, onNavigate, isLoaded }: NavProps) {
-  const router = useRouter()
   const locale = useLocale()
   const t = useTranslations("nav")
+  const targetLocale = locale === "en" ? "fr" : "en"
 
-  const toggleLang = () => {
-    const target = locale === "en" ? "fr" : "en"
-    router.push(`/${target}`)
-  }
+  const navItems = [
+    { label: t("home"), href: "#hero" },
+    { label: t("work"), href: "#work" },
+    { label: t("services"), href: "#services" },
+    { label: t("about"), href: "#process" },
+    { label: t("contact"), href: "#contact" },
+  ]
 
   return (
     <nav
@@ -27,31 +30,39 @@ export function Nav({ currentSection, onNavigate, isLoaded }: NavProps) {
       }`}
     >
       <div className="flex md:flex-1 justify-start">
-        <button
-          onClick={() => onNavigate(0)}
+        <a
+          href="#hero"
+          onClick={(e) => {
+            e.preventDefault()
+            onNavigate(0)
+          }}
           className="flex h-10 items-center transition-transform hover:scale-105"
           aria-label="Home"
         >
           <span className="font-sans text-xl font-bold text-foreground">sd</span>
-        </button>
+        </a>
       </div>
 
       <div className="hidden items-center justify-center gap-8 md:flex">
-        {[t("home"), t("work"), t("services"), t("about"), t("contact")].map((label, index) => (
-          <button
-            key={label}
-            onClick={() => onNavigate(index)}
+        {navItems.map((item, index) => (
+          <a
+            key={item.label}
+            href={item.href}
+            onClick={(e) => {
+              e.preventDefault()
+              onNavigate(index)
+            }}
             className={`group relative font-sans text-sm font-medium transition-colors ${
               currentSection === index ? "text-foreground" : "text-foreground/80 hover:text-foreground"
             }`}
           >
-            {label}
+            {item.label}
             <span
               className={`absolute -bottom-1 left-0 h-px bg-foreground transition-all duration-300 ${
                 currentSection === index ? "w-full" : "w-0 group-hover:w-full"
               }`}
             />
-          </button>
+          </a>
         ))}
       </div>
 
@@ -63,14 +74,15 @@ export function Nav({ currentSection, onNavigate, isLoaded }: NavProps) {
           {t("getStarted")}
         </MagneticButton>
 
-        <button
-          onClick={toggleLang}
+        <Link
+          href={`/${targetLocale}`}
           aria-label="Toggle language"
           className="rounded-md border border-foreground/10 bg-foreground/10 px-3 py-1 text-sm font-medium"
         >
           {t("lang")}
-        </button>
+        </Link>
       </div>
     </nav>
   )
 }
+

@@ -47,6 +47,7 @@ export function ContactSection() {
 
   return (
     <section
+      id="contact"
       ref={ref}
       className="flex min-h-screen w-full shrink-0 snap-start items-center p-6 pt-20 md:px-12 md:pt-10 lg:px-16"
     >

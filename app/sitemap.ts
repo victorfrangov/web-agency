@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           en: `${baseUrl}/en`,
           fr: `${baseUrl}/fr`,
+          "x-default": `${baseUrl}/en`,
         },
       },
     },
@@ -25,8 +26,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           en: `${baseUrl}/en`,
           fr: `${baseUrl}/fr`,
+          "x-default": `${baseUrl}/en`,
         },
       },
     },
   ]
 }
+

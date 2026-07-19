@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
       languages: {
         en: "https://situsdigital.com/en",
         fr: "https://situsdigital.com/fr",
+        "x-default": "https://situsdigital.com/en",
       },
     },
     openGraph: {

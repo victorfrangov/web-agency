@@ -33,6 +33,7 @@ export function ProcessSection() {
 
   return (
     <section
+      id="process"
       ref={ref}
       className="flex min-h-screen w-full shrink-0 snap-start items-center px-4 pt-20 md:px-12 md:pt-0 lg:px-16"
     >
