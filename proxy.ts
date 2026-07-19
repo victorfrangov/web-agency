@@ -3,9 +3,10 @@ import createMiddleware from "next-intl/middleware"
 const intlMiddleware = createMiddleware({
   locales: ["en", "fr"],
   defaultLocale: "en",
+  alternateLinks: false,
 })
 
-// Next.js 16 proxy convention: export a single default `proxy(request)`
+// Next.js proxy convention: export a single default `proxy(request)`
 export default function proxy(request: Request) {
   return intlMiddleware(request as any)
 }
