@@ -1,13 +1,13 @@
 {
 	"meta": {
 		"title": "Situs Digital | Création de sites web à Montréal",
-		"description": "Situs Digital est une agence web Montréalaise qui crée des sites rapides, modernes et performants pour les entreprises locales. Audit gratuit disponible."
+		"description": "Situs Digital est une agence web Montréalaise dirigée par des étudiants qui crée des sites rapides, modernes et performants pour les entreprises locales. Audit gratuit disponible."
 	},
 	"hero": {
 		"badge": "Agence Web Montréalaise",
 		"titleLine1": "Sortez du lot,",
 		"titleLine2": "Soyez reconnu",
-		"description": "Nous bâtissons la présence numérique que votre entreprise mérite. Des sites web haute performance à la visibilité stratégique, nous veillons à ce que vous ne soyez pas seulement vu, mais mémorisé.",
+		"description": "Nous sommes des étudiants qui bâtissent la présence numérique que votre entreprise mérite. Des sites web haute performance à la visibilité stratégique, nous veillons à ce que vous ne soyez pas seulement vu, mais mémorisé.",
 		"primaryCta": "Demander une démo",
 		"secondaryCta": "Voir nos réalisations",
 		"scrollHint": "Faites défiler pour en savoir plus"
@@ -76,8 +76,8 @@
 	},
 	"about": {
 		"heading": "Construire l'avenir du digital",
-		"p1": "Nous sommes un collectif de designers, développeurs et technologues créatifs obsédés par la création d'expériences numériques exceptionnelles.",
-		"p2": "Chaque projet est une opportunité d'explorer de nouvelles possibilités et de repousser les limites créatives.",
+		"p1": "Nous sommes des étudiants passionnés par la création d'expériences numériques exceptionnelles pour les entreprises locales.",
+		"p2": "Nous collaborons directement avec vous pour livrer des résultats rapides et sur mesure, sans intermédiaires.",
 		"primaryCta": "Démarrer un projet",
 		"secondaryCta": "Voir nos projets"
 	},
